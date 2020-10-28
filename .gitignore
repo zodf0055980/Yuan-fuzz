@@ -10,6 +10,7 @@ afl-gotcpu
 afl-showmap
 afl-tmin
 as
+Yuan-fuzz
 
 # Binaries produced by "make -C llvm_mode"
 afl-clang-fast

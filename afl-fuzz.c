@@ -8034,6 +8034,7 @@ static void usage(u8 *argv0)
 
        "  -s xml        - add argv file information\n"
        "  -w            - let file path in front of argv\n"
+       "  -r            - argv init random\n"
        "  -f file       - location read by the fuzzed program (stdin)\n"
        "  -t msec       - timeout for each run (auto-scaled, 50-%u ms)\n"
        "  -m megs       - memory limit for child process (%u MB)\n"

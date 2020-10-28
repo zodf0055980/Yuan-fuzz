@@ -5,9 +5,9 @@ Fuzzer with argv
 ## example
 用 [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) 當範例
 ``` 
-./AFL/sqfuzz -i i1 -o o1 -m none -s parameters.xml -- ~/afl-target/libjpeg-turbo/build/cjpeg
+Yuan-fuzz -i i1 -o o1 -m none -s parameters.xml -- ~/PATH/libjpeg-turbo/build/cjpeg
 ```
-從 afl 增加些許功能
+從 AFL 增加些許功能
 ```
 -s xml        - add argv file information
 -w            - let file path in front of argv

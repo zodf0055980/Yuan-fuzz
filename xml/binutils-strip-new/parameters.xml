@@ -1,0 +1,183 @@
+<root>
+  <FILE>
+    <ELEMENT>@@</ELEMENT>
+ </FILE>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-I elf64-x86-64</ELEMENT>
+    <ELEMENT>-I elf32-i386</ELEMENT>
+    <ELEMENT>-I elf32-iamcu</ELEMENT>
+    <ELEMENT>-I elf32-x86-64</ELEMENT>
+    <ELEMENT>-I pei-i386</ELEMENT>
+    <ELEMENT>-I pei-x86-64</ELEMENT>
+    <ELEMENT>-I elf64-l1om</ELEMENT>
+    <ELEMENT>-I elf64-k1om</ELEMENT>
+    <ELEMENT>-I elf64-little</ELEMENT>
+    <ELEMENT>-I elf64-big</ELEMENT>
+    <ELEMENT>-I elf32-little</ELEMENT>
+    <ELEMENT>-I elf32-big</ELEMENT>
+    <ELEMENT>-I srec</ELEMENT>
+    <ELEMENT>-I symbolsrec</ELEMENT>
+    <ELEMENT>-I verilog</ELEMENT>
+    <ELEMENT>-I tekhex</ELEMENT>
+    <ELEMENT>-I binary</ELEMENT>
+    <ELEMENT>-I ihex</ELEMENT>
+    <ELEMENT>-I plugin</ELEMENT>
+  </PARAMETER>	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O elf64-x86-64</ELEMENT>
+    <ELEMENT>-O elf32-i386</ELEMENT>
+    <ELEMENT>-O elf32-iamcu</ELEMENT>
+    <ELEMENT>-O elf32-x86-64</ELEMENT>
+    <ELEMENT>-O pei-i386</ELEMENT>
+    <ELEMENT>-O pei-x86-64</ELEMENT>
+    <ELEMENT>-O elf64-l1om</ELEMENT>
+    <ELEMENT>-O elf64-k1om</ELEMENT>
+    <ELEMENT>-O elf64-little</ELEMENT>
+    <ELEMENT>-O elf64-big</ELEMENT>
+    <ELEMENT>-O elf32-little</ELEMENT>
+    <ELEMENT>-O elf32-big</ELEMENT>
+    <ELEMENT>-O srec</ELEMENT>
+    <ELEMENT>-O symbolsrec</ELEMENT>
+    <ELEMENT>-O verilog</ELEMENT>
+    <ELEMENT>-O tekhex</ELEMENT>
+    <ELEMENT>-O binary</ELEMENT>
+    <ELEMENT>-O ihex</ELEMENT>
+    <ELEMENT>-O plugin</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-F elf64-x86-64</ELEMENT>
+    <ELEMENT>-F elf32-i386</ELEMENT>
+    <ELEMENT>-F elf32-iamcu</ELEMENT>
+    <ELEMENT>-F elf32-x86-64</ELEMENT>
+    <ELEMENT>-F pei-i386</ELEMENT>
+    <ELEMENT>-F pei-x86-64</ELEMENT>
+    <ELEMENT>-F elf64-l1om</ELEMENT>
+    <ELEMENT>-F elf64-k1om</ELEMENT>
+    <ELEMENT>-F elf64-little</ELEMENT>
+    <ELEMENT>-F elf64-big</ELEMENT>
+    <ELEMENT>-F elf32-little</ELEMENT>
+    <ELEMENT>-F elf32-big</ELEMENT>
+    <ELEMENT>-F srec</ELEMENT>
+    <ELEMENT>-F symbolsrec</ELEMENT>
+    <ELEMENT>-F verilog</ELEMENT>
+    <ELEMENT>-F tekhex</ELEMENT>
+    <ELEMENT>-F binary</ELEMENT>
+    <ELEMENT>-F ihex</ELEMENT>
+    <ELEMENT>-F plugin</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--remove-section=.gnu.hash</ELEMENT>
+    <ELEMENT>--remove-section=.dynsym</ELEMENT>
+    <ELEMENT>--remove-section=.dynstr</ELEMENT>
+    <ELEMENT>--remove-section=.rela.plt</ELEMENT>
+    <ELEMENT>--remove-section=.init</ELEMENT>
+    <ELEMENT>--remove-section=.plt</ELEMENT>
+    <ELEMENT>--remove-section=.plt.got</ELEMENT>
+    <ELEMENT>--remove-section=.text</ELEMENT>
+    <ELEMENT>--remove-section=.fini</ELEMENT>
+    <ELEMENT>--remove-section=.rodata</ELEMENT>
+    <ELEMENT>--remove-section=.init_array</ELEMENT>
+    <ELEMENT>--remove-section=.fini_array</ELEMENT>
+    <ELEMENT>--remove-section=.dynamic</ELEMENT>
+    <ELEMENT>--remove-section=.comment</ELEMENT>
+    <ELEMENT>--remove-section=.shstrtab</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--remove-relocations .gnu.hash</ELEMENT>
+    <ELEMENT>--remove-relocations .dynsym</ELEMENT>
+    <ELEMENT>--remove-relocations .dynstr</ELEMENT>
+    <ELEMENT>--remove-relocations .rela.plt</ELEMENT>
+    <ELEMENT>--remove-relocations .init</ELEMENT>
+    <ELEMENT>--remove-relocations .plt</ELEMENT>
+    <ELEMENT>--remove-relocations .plt.got</ELEMENT>
+    <ELEMENT>--remove-relocations .text</ELEMENT>
+    <ELEMENT>--remove-relocations .fini</ELEMENT>
+    <ELEMENT>--remove-relocations .rodata</ELEMENT>
+    <ELEMENT>--remove-relocations .init_array</ELEMENT>
+    <ELEMENT>--remove-relocations .fini_array</ELEMENT>
+    <ELEMENT>--remove-relocations .dynamic</ELEMENT>
+    <ELEMENT>--remove-relocations .comment</ELEMENT>
+    <ELEMENT>--remove-relocations .shstrtab</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-s</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-g</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-dwo</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-dwo</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-unneeded</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--only-keep-debug</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-M</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-merge-notes</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--keep-section=.gnu.hash</ELEMENT>
+    <ELEMENT>--keep-section=.dynsym</ELEMENT>
+    <ELEMENT>--keep-section=.dynstr</ELEMENT>
+    <ELEMENT>--keep-section=.rela.plt</ELEMENT>
+    <ELEMENT>--keep-section=.init</ELEMENT>
+    <ELEMENT>--keep-section=.plt</ELEMENT>
+    <ELEMENT>--keep-section=.plt.got</ELEMENT>
+    <ELEMENT>--keep-section=.text</ELEMENT>
+    <ELEMENT>--keep-section=.fini</ELEMENT>
+    <ELEMENT>--keep-section=.rodata</ELEMENT>
+    <ELEMENT>--keep-section=.init_array</ELEMENT>
+    <ELEMENT>--keep-section=.fini_array</ELEMENT>
+    <ELEMENT>--keep-section=.dynamic</ELEMENT>
+    <ELEMENT>--keep-section=.comment</ELEMENT>
+    <ELEMENT>--keep-section=.shstrtab</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--keep-file-symbols</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-w</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-x</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-X</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-v</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-o ./aa</ELEMENT>
+  </PARAMETER>
+</root>

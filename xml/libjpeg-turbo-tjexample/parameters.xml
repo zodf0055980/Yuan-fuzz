@@ -1,0 +1,72 @@
+<root>
+  <FILE>
+    <ELEMENT>@@</ELEMENT>
+ </FILE>
+	
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>./out</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-subsamp 444</ELEMENT>
+    <ELEMENT>-subsamp 422</ELEMENT>
+    <ELEMENT>-subsamp 420</ELEMENT>
+    <ELEMENT>-subsamp gray</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-q 10</ELEMENT>
+    <ELEMENT>-q 95</ELEMENT>
+    <ELEMENT>-q 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-scale 2/1</ELEMENT>
+    <ELEMENT>-scale 15/8</ELEMENT>
+    <ELEMENT>-scale 7/4</ELEMENT>
+    <ELEMENT>-scale 13/8</ELEMENT>
+    <ELEMENT>-scale 3/2</ELEMENT>
+    <ELEMENT>-scale 11/8</ELEMENT>
+    <ELEMENT>-scale 5/4</ELEMENT>
+    <ELEMENT>-scale 9/8</ELEMENT>
+    <ELEMENT>-scale 1/1</ELEMENT>
+    <ELEMENT>-scale 7/8</ELEMENT>
+    <ELEMENT>-scale 3/4</ELEMENT>
+    <ELEMENT>-scale 5/8</ELEMENT>
+    <ELEMENT>-scale 1/2</ELEMENT>
+    <ELEMENT>-scale 3/8</ELEMENT>
+    <ELEMENT>-scale 1/4</ELEMENT>
+    <ELEMENT>-scale 1/8</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-hflip</ELEMENT>
+    <ELEMENT>-vflip</ELEMENT>
+    <ELEMENT>-transpose</ELEMENT>
+    <ELEMENT>-rot90</ELEMENT>
+    <ELEMENT>-rot180</ELEMENT>
+    <ELEMENT>-rot270</ELEMENT>
+  </PARAMETER>
+   <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-grayscale</ELEMENT>
+  </PARAMETER>
+   <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-crop 10x10+16+16</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-fastupsample</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-fastdct</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-accuratedct</ELEMENT>
+  </PARAMETER>
+
+</root>

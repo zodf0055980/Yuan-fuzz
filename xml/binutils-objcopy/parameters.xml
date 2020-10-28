@@ -1,0 +1,363 @@
+<root>
+  <FILE>
+    <ELEMENT>@@ /dev/null</ELEMENT>
+ </FILE>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-I elf64-x86-64</ELEMENT>
+    <ELEMENT>-I elf32-i386</ELEMENT>
+    <ELEMENT>-I elf32-iamcu</ELEMENT>
+    <ELEMENT>-I elf32-x86-64</ELEMENT>
+    <ELEMENT>-I a.out-i386-linux</ELEMENT>
+    <ELEMENT>-I pei-i386</ELEMENT>
+    <ELEMENT>-I pei-x86-64</ELEMENT>
+    <ELEMENT>-I elf64-l1om</ELEMENT>
+    <ELEMENT>-I elf64-k1om</ELEMENT>
+    <ELEMENT>-I elf64-little</ELEMENT>
+    <ELEMENT>-I elf64-big</ELEMENT>
+    <ELEMENT>-I elf32-little</ELEMENT>
+    <ELEMENT>-I elf32-big</ELEMENT>
+    <ELEMENT>-I pe-x86-64</ELEMENT>
+    <ELEMENT>-I pe-bigobj-x86-64</ELEMENT>
+    <ELEMENT>-I pe-i386</ELEMENT>
+    <ELEMENT>-I plugin</ELEMENT>
+    <ELEMENT>-I srec</ELEMENT>
+    <ELEMENT>-I symbolsrec</ELEMENT>
+    <ELEMENT>-I verilog</ELEMENT>
+    <ELEMENT>-I tekhex</ELEMENT>
+    <ELEMENT>-I binary</ELEMENT>
+    <ELEMENT>-I ihex</ELEMENT>
+  </PARAMETER>	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O elf64-x86-64</ELEMENT>
+    <ELEMENT>-O elf32-i386</ELEMENT>
+    <ELEMENT>-O elf32-iamcu</ELEMENT>
+    <ELEMENT>-O elf32-x86-64</ELEMENT>
+    <ELEMENT>-O a.out-i386-linux</ELEMENT>
+    <ELEMENT>-O pei-i386</ELEMENT>
+    <ELEMENT>-O pei-x86-64</ELEMENT>
+    <ELEMENT>-O elf64-l1om</ELEMENT>
+    <ELEMENT>-O elf64-k1om</ELEMENT>
+    <ELEMENT>-O elf64-little</ELEMENT>
+    <ELEMENT>-O elf64-big</ELEMENT>
+    <ELEMENT>-O elf32-little</ELEMENT>
+    <ELEMENT>-O elf32-big</ELEMENT>
+    <ELEMENT>-O pe-x86-64</ELEMENT>
+    <ELEMENT>-O pe-bigobj-x86-64</ELEMENT>
+    <ELEMENT>-O pe-i386</ELEMENT>
+    <ELEMENT>-O plugin</ELEMENT>
+    <ELEMENT>-O srec</ELEMENT>
+    <ELEMENT>-O symbolsrec</ELEMENT>
+    <ELEMENT>-O verilog</ELEMENT>
+    <ELEMENT>-O tekhex</ELEMENT>
+    <ELEMENT>-O binary</ELEMENT>
+    <ELEMENT>-O ihex</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-B i386</ELEMENT>
+    <ELEMENT>-B l1om</ELEMENT>
+    <ELEMENT>-B k1om</ELEMENT>
+    <ELEMENT>-B iamcu</ELEMENT>
+    <ELEMENT>-B plugin</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-F elf64-x86-64</ELEMENT>
+    <ELEMENT>-F elf32-i386</ELEMENT>
+    <ELEMENT>-F elf32-iamcu</ELEMENT>
+    <ELEMENT>-F elf32-x86-64</ELEMENT>
+    <ELEMENT>-F a.out-i386-linux</ELEMENT>
+    <ELEMENT>-F pei-i386</ELEMENT>
+    <ELEMENT>-F pei-x86-64</ELEMENT>
+    <ELEMENT>-F elf64-l1om</ELEMENT>
+    <ELEMENT>-F elf64-k1om</ELEMENT>
+    <ELEMENT>-F elf64-little</ELEMENT>
+    <ELEMENT>-F elf64-big</ELEMENT>
+    <ELEMENT>-F elf32-little</ELEMENT>
+    <ELEMENT>-F elf32-big</ELEMENT>
+    <ELEMENT>-F pe-x86-64</ELEMENT>
+    <ELEMENT>-F pe-bigobj-x86-64</ELEMENT>
+    <ELEMENT>-F pe-i386</ELEMENT>
+    <ELEMENT>-F plugin</ELEMENT>
+    <ELEMENT>-F srec</ELEMENT>
+    <ELEMENT>-F symbolsrec</ELEMENT>
+    <ELEMENT>-F verilog</ELEMENT>
+    <ELEMENT>-F tekhex</ELEMENT>
+    <ELEMENT>-F binary</ELEMENT>
+    <ELEMENT>-F ihex</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-p</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-D</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-U</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-j .init</ELEMENT>
+    <ELEMENT>-j .plt</ELEMENT>
+    <ELEMENT>-j .plt.got</ELEMENT>
+    <ELEMENT>-j .text</ELEMENT>
+    <ELEMENT>-j .fini</ELEMENT>
+    <ELEMENT>-j .rodata</ELEMENT>
+    <ELEMENT>-j .init_array</ELEMENT>
+    <ELEMENT>-j .fini_array</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-R .init</ELEMENT>
+    <ELEMENT>-R .plt</ELEMENT>
+    <ELEMENT>-R .plt.got</ELEMENT>
+    <ELEMENT>-R .text</ELEMENT>
+    <ELEMENT>-R .fini</ELEMENT>
+    <ELEMENT>-R .rodata</ELEMENT>
+    <ELEMENT>-R .init_array</ELEMENT>
+    <ELEMENT>-R .fini_array</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--remove-relocations .init</ELEMENT>
+    <ELEMENT>--remove-relocations .plt</ELEMENT>
+    <ELEMENT>--remove-relocations .plt.got</ELEMENT>
+    <ELEMENT>--remove-relocations .text</ELEMENT>
+    <ELEMENT>--remove-relocations .fini</ELEMENT>
+    <ELEMENT>--remove-relocations .rodata</ELEMENT>
+    <ELEMENT>--remove-relocations .init_array</ELEMENT>
+    <ELEMENT>--remove-relocations .fini_array</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-S</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-debug</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-dwo</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-unneeded</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-N aa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--strip-unneeded-symbol aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--only-keep-debug</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--extract-dwo</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--extract-symbol</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-K aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--keep-file-symbols</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--localize-hidden</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-L aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--globalize-symbol aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-G aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-W aaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--weaken</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--wildcard</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--discard-all</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--discard-locals</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--set-start 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--change-start 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--change-section-address .rodata=3333</ELEMENT>
+    <ELEMENT>--change-section-address .rodata+3333</ELEMENT>
+    <ELEMENT>--change-section-address .rodata-3333</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--change-section-lma .rodata=4444</ELEMENT>
+    <ELEMENT>--change-section-lma .rodata+4444</ELEMENT>
+    <ELEMENT>--change-section-lma .rodata-4444</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--change-section-vma .rodata=123</ELEMENT>
+    <ELEMENT>--change-section-vma .rodata+123</ELEMENT>
+    <ELEMENT>--change-section-vma .rodata-123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-change-warnings</ELEMENT>
+    <ELEMENT>--change-warnings</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--set-section-flags .rodata=alloc</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=load</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=noload</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=readonly</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=debug</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=code</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=data</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=rom</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=share</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=contents</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=merge</ELEMENT>
+    <ELEMENT>--set-section-flags .rodata=strings</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--rename-section .rodata=sss</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--long-section-names enable</ELEMENT>
+    <ELEMENT>--long-section-names disable</ELEMENT>
+    <ELEMENT>--long-section-names keep</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--change-leading-char</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--remove-leading-char</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--redefine-sym a=b</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--srec-len 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--srec-forceS3</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--add-symbol function_name=.text:0x900,function,global</ELEMENT>
+    <ELEMENT>--add-symbol 'abc'='.text:123,before=.data'</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--writable-text</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--readonly-text</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--pure</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--impure</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--file-alignment 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--heap 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--image-base 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--section-alignment 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--stack 123</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--compress-debug-sections=none</ELEMENT>
+    <ELEMENT>--compress-debug-sections=zlib</ELEMENT>
+    <ELEMENT>--compress-debug-sections=zlib-gnu</ELEMENT>
+    <ELEMENT>--compress-debug-sections=zlib-gabi</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--decompress-debug-sections</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--elf-stt-common=yes</ELEMENT>
+    <ELEMENT>--elf-stt-common=no</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-M</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-merge-notes</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-v</ELEMENT>
+  </PARAMETER>
+
+</root>

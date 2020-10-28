@@ -1,0 +1,136 @@
+<root>
+  <FILE>
+    <ELEMENT>convert @@ /dev/null</ELEMENT>
+  </FILE>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-blur 0x1</ELEMENT>
+    <ELEMENT>-blur 0x2</ELEMENT>
+    <ELEMENT>-blur 0x3</ELEMENT>
+    <ELEMENT>-blur 0x4</ELEMENT>
+    <ELEMENT>-blur 0x5</ELEMENT>
+    <ELEMENT>-blur 0x6</ELEMENT>
+    <ELEMENT>-blur 0x7</ELEMENT>
+    <ELEMENT>-blur 0x8</ELEMENT>
+    <ELEMENT>-blur 0x9</ELEMENT>
+    <ELEMENT>-blur 0x10</ELEMENT>
+    <ELEMENT>-blur 0x11</ELEMENT>
+    <ELEMENT>-blur 0x12</ELEMENT>
+    <ELEMENT>-blur 0x13</ELEMENT>
+    <ELEMENT>-blur 0x14</ELEMENT>
+    <ELEMENT>-blur 0x15</ELEMENT>
+    <ELEMENT>-blur 0x16</ELEMENT>
+    <ELEMENT>-blur 0x17</ELEMENT>
+    <ELEMENT>-blur 0x18</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-fill snow</ELEMENT>
+    <ELEMENT>-fill IndianRed</ELEMENT>
+    <ELEMENT>-fill firebrick3</ELEMENT>
+    <ELEMENT>-fill DarkRed</ELEMENT>
+    <ELEMENT>-fill LightPink</ELEMENT>
+    <ELEMENT>-fill VioletRed</ELEMENT>
+    <ELEMENT>-fill DarkViolet</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-colorize 5%</ELEMENT>
+    <ELEMENT>-colorize 10%</ELEMENT>
+    <ELEMENT>-colorize 15%</ELEMENT>
+    <ELEMENT>-colorize 20%</ELEMENT>
+    <ELEMENT>-colorize 25%</ELEMENT>
+    <ELEMENT>-colorize 30%</ELEMENT>
+    <ELEMENT>-colorize 35%</ELEMENT>
+    <ELEMENT>-colorize 40%</ELEMENT>
+    <ELEMENT>-colorize 45%</ELEMENT>
+    <ELEMENT>-colorize 50%</ELEMENT>
+    <ELEMENT>-colorize 55%</ELEMENT>
+    <ELEMENT>-colorize 60%</ELEMENT>
+    <ELEMENT>-colorize 65%</ELEMENT>
+    <ELEMENT>-colorize 70%</ELEMENT>
+    <ELEMENT>-colorize 75%</ELEMENT>
+    <ELEMENT>-colorize 80%</ELEMENT>
+    <ELEMENT>-colorize 85%</ELEMENT>
+    <ELEMENT>-colorize 90%</ELEMENT>
+    <ELEMENT>-colorize 95%</ELEMENT>
+    <ELEMENT>-colorize 100%</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-resize 800x600</ELEMENT>
+    <ELEMENT>-resize 1024x768</ELEMENT>
+    <ELEMENT>-resize 320x240</ELEMENT>
+    <ELEMENT>-resize 1920x1080</ELEMENT>
+    <ELEMENT>-resize 1680x1050</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-quality 5</ELEMENT>
+    <ELEMENT>-quality 10</ELEMENT>
+    <ELEMENT>-quality 15</ELEMENT>
+    <ELEMENT>-quality 20</ELEMENT>
+    <ELEMENT>-quality 25</ELEMENT>
+    <ELEMENT>-quality 30</ELEMENT>
+    <ELEMENT>-quality 35</ELEMENT>
+    <ELEMENT>-quality 40</ELEMENT>
+    <ELEMENT>-quality 45</ELEMENT>
+    <ELEMENT>-quality 50</ELEMENT>
+    <ELEMENT>-quality 55</ELEMENT>
+    <ELEMENT>-quality 60</ELEMENT>
+    <ELEMENT>-quality 65</ELEMENT>
+    <ELEMENT>-quality 70</ELEMENT>
+    <ELEMENT>-quality 75</ELEMENT>
+    <ELEMENT>-quality 80</ELEMENT>
+    <ELEMENT>-quality 85</ELEMENT>
+    <ELEMENT>-quality 90</ELEMENT>
+    <ELEMENT>-quality 95</ELEMENT>
+    <ELEMENT>-quality 100</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-synchronize</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-transpose</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-transverse</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-white-balance</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-black-point-compensation</ELEMENT>
+  </PARAMETER>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-cycle 0</ELEMENT>
+    <ELEMENT>-cycle 1</ELEMENT>
+    <ELEMENT>-cycle 2</ELEMENT>
+    <ELEMENT>-cycle 3</ELEMENT>
+    <ELEMENT>-cycle 4</ELEMENT>
+    <ELEMENT>-cycle 5</ELEMENT>
+    <ELEMENT>-cycle 6</ELEMENT>
+    <ELEMENT>-cycle 7</ELEMENT>
+    <ELEMENT>-cycle 8</ELEMENT>
+    <ELEMENT>-cycle 9</ELEMENT>
+    <ELEMENT>-cycle 10</ELEMENT>
+  </PARAMETER>
+
+</root>

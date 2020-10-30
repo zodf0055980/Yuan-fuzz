@@ -19,6 +19,7 @@ Yuan-fuzz -i i1 -o o1 -m none -s parameters.xml -- ~/PATH/libjpeg-turbo/build/cj
 ### binutils
 1. https://sourceware.org/bugzilla/show_bug.cgi?id=26774
 2. https://sourceware.org/bugzilla/show_bug.cgi?id=26805
+3. https://sourceware.org/bugzilla/show_bug.cgi?id=26809
 ### libvips
 1. https://github.com/libvips/libvips/issues/1867
 2. https://github.com/libvips/libvips/issues/1868

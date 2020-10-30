@@ -1,18 +1,28 @@
 # Yuan-fuzz
-Fuzzer with argv
+Fuzzer run with argv based on AFL
 ## How to use
-先觀察程式執行有哪些參數，並依照參數撰寫設定檔，使用設定檔來協助模糊測試。
-## example
-用 [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) 當範例
-``` 
-Yuan-fuzz -i i1 -o o1 -m none -s parameters.xml -- ~/PATH/libjpeg-turbo/build/cjpeg
+Use `-h` `--help` to know target program options, and use it to write XML file to help fuzzing.
+I give some [XML examples](https://github.com/zodf0055980/Yuan-fuzz/tree/main/xml) here, maybe could help to write XML file.
+## Technology
+Add one fuzzing stage named arg_gen, it automatically generates random argv using xml. If find new path, add argv information in queue. When arg_gen stage end, restart forkserver with argv information in queue. 
+## How to use
+Install [libxml2](http://xmlsoft.org/downloads.html) first.
+
+Build it.
 ```
-從 AFL 增加些許功能
+$ make
+```
+use [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) to be running example.
+``` 
+Yuan-fuzz -i input -o output -m none -s ~/XML_PATH/parameters.xml -- ~/TARGET_PATH/libjpeg-turbo/build/cjpeg
+```
+We also add some option.
 ```
 -s xml        - add argv file information
--w            - let file path in front of argv
--r            - argv init random
+-w            - let file_path in front of argv
+-r            - argv random initial
 ```
+If your xml file have a lot of argv, maybe you have to change some define value in parse.h.
 ## Bug reported
 ### libjpeg-turbo
 1. https://github.com/libjpeg-turbo/libjpeg-turbo/issues/441
@@ -24,5 +34,5 @@ Yuan-fuzz -i i1 -o o1 -m none -s parameters.xml -- ~/PATH/libjpeg-turbo/build/cj
 1. https://github.com/libvips/libvips/issues/1867
 2. https://github.com/libvips/libvips/issues/1868
 
-## 致謝
-使用 [SQ-fuzz](https://github.com/fdgkhdkgh/SQ-Fuzz) 修改，對內部程式做優化與加速(約 1.2 倍)，並使有些功能能使用，e.g. qemu-mode，bind cpu core。
+## Thanks
+Use [SQ-fuzz](https://github.com/fdgkhdkgh/SQ-Fuzz) to modify.

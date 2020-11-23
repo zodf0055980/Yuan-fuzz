@@ -1,0 +1,38 @@
+<root>
+  <FILE>
+    <ELEMENT>-f @@</ELEMENT>
+ </FILE>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-b 1</ELEMENT>
+    <ELEMENT>-b 10</ELEMENT>
+    <ELEMENT>-b 8192</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-v</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-x</ELEMENT>
+    <ELEMENT>-t</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-k</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-m</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-O</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-p</ELEMENT>
+  </PARAMETER>
+
+</root>

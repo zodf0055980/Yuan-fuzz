@@ -71,6 +71,18 @@
   </PARAMETER>
   <PARAMETER>
     <MUST>false</MUST>
+    <ELEMENT>-p</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-D</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-U</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
     <ELEMENT>--remove-section=.gnu.hash</ELEMENT>
     <ELEMENT>--remove-section=.dynsym</ELEMENT>
     <ELEMENT>--remove-section=.dynstr</ELEMENT>
@@ -113,10 +125,6 @@
   <PARAMETER>
     <MUST>false</MUST>
     <ELEMENT>-g</ELEMENT>
-  </PARAMETER>
-  <PARAMETER>
-    <MUST>false</MUST>
-    <ELEMENT>--strip-dwo</ELEMENT>
   </PARAMETER>
   <PARAMETER>
     <MUST>false</MUST>
@@ -178,6 +186,6 @@
   </PARAMETER>
   <PARAMETER>
     <MUST>false</MUST>
-    <ELEMENT>-o ./aa</ELEMENT>
+    <ELEMENT>-o /dev/null</ELEMENT>
   </PARAMETER>
 </root>

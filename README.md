@@ -33,6 +33,8 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 ### libvips
 1. https://github.com/libvips/libvips/issues/1867
 2. https://github.com/libvips/libvips/issues/1868
+### openjpeg
+1. https://github.com/uclouvain/openjpeg/issues/1283
 
 ## Thanks
 Use [SQ-fuzz](https://github.com/fdgkhdkgh/SQ-Fuzz) to modify.

@@ -37,6 +37,11 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 1. https://github.com/uclouvain/openjpeg/issues/1283 (CVE-2020-27814)
 2. https://github.com/uclouvain/openjpeg/issues/1284
 3. https://github.com/uclouvain/openjpeg/issues/1286
+4. https://github.com/uclouvain/openjpeg/issues/1293
+5. https://github.com/uclouvain/openjpeg/issues/1294
+6. https://github.com/uclouvain/openjpeg/issues/1297
+7. https://github.com/uclouvain/openjpeg/issues/1299
+8. https://github.com/uclouvain/openjpeg/issues/1302
 ### jasper
 1. https://github.com/jasper-software/jasper/issues/252
 

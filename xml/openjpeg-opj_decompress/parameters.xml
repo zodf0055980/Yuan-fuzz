@@ -1,0 +1,74 @@
+<root>
+  <FILE>
+    <ELEMENT>-i @@</ELEMENT>
+ </FILE>
+	
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-o ./tmp/a.png</ELEMENT>
+    <ELEMENT>-o ./tmp/a.pnm</ELEMENT>
+    <ELEMENT>-o ./tmp/a.pgm</ELEMENT>
+    <ELEMENT>-o ./tmp/a.ppm</ELEMENT>
+    <ELEMENT>-o ./tmp/a.pgx</ELEMENT>
+    <ELEMENT>-o ./tmp/a.bmp</ELEMENT>
+    <ELEMENT>-o ./tmp/a.tif</ELEMENT>
+    <ELEMENT>-o ./tmp/a.raw</ELEMENT>
+    <ELEMENT>-o ./tmp/a.tga</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-r 0</ELEMENT>
+    <ELEMENT>-r 1</ELEMENT>
+    <ELEMENT>-r 2</ELEMENT>
+    <ELEMENT>-r 3</ELEMENT>
+    <ELEMENT>-r 4</ELEMENT>
+    <ELEMENT>-r 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-l 0</ELEMENT>
+    <ELEMENT>-l 10</ELEMENT>
+    <ELEMENT>-l 2147483647</ELEMENT>
+    <ELEMENT>-l 2147483648</ELEMENT>
+    <ELEMENT>-l 4294967295</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-d 1,1,17,17</ELEMENT>
+    <ELEMENT>-d 2,2,18,18</ELEMENT>
+  </PARAMETER>
+   <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-t 0</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-p 5C,5C</ELEMENT>
+    <ELEMENT>-p 5S,5C</ELEMENT>
+    <ELEMENT>-p 5C,5S</ELEMENT>
+    <ELEMENT>-p 5S,5S</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-c 0</ELEMENT>
+    <ELEMENT>-c 1</ELEMENT>
+    <ELEMENT>-c 1,2</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-force-rgb</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-upsample</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-split-pnm</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-quiet</ELEMENT>
+  </PARAMETER>
+
+</root>

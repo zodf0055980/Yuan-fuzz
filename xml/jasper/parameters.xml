@@ -1,0 +1,166 @@
+<root>
+  <FILE>
+    <ELEMENT>--input @@</ELEMENT>
+ </FILE>
+
+	<PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>--input-format pgx</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>--output /dev/null</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>--output-format jp2</ELEMENT>
+    <ELEMENT>--output-format jpc</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--verbose</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O imgareatlx=10</ELEMENT>
+    <ELEMENT>-O imgareatlx=35</ELEMENT>
+    <ELEMENT>-O imgareatlx=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O imgareatly=10</ELEMENT>
+    <ELEMENT>-O imgareatly=35</ELEMENT>
+    <ELEMENT>-O imgareatly=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O tilegrdtlx=0</ELEMENT>
+    <ELEMENT>-O tilegrdtlx=1</ELEMENT>
+    <ELEMENT>-O tilegrdtlx=10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O tilegrdtly=0</ELEMENT>
+    <ELEMENT>-O tilegrdtly=1</ELEMENT>
+    <ELEMENT>-O tilegrdtly=10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O tilewidth=10</ELEMENT>
+    <ELEMENT>-O tilewidth=35</ELEMENT>
+    <ELEMENT>-O tilewidth=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O tileheight=10</ELEMENT>
+    <ELEMENT>-O tileheight=35</ELEMENT>
+    <ELEMENT>-O tileheight=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O prcwidth=65536</ELEMENT>
+    <ELEMENT>-O prcwidth=32768</ELEMENT>
+    <ELEMENT>-O prcwidth=128</ELEMENT>
+    <ELEMENT>-O prcwidth=64</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O prcheight=65536</ELEMENT>
+    <ELEMENT>-O prcheight=32768</ELEMENT>
+    <ELEMENT>-O prcheight=128</ELEMENT>
+    <ELEMENT>-O prcheight=64</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O cblkwidth=35</ELEMENT>
+    <ELEMENT>-O cblkwidth=50</ELEMENT>
+    <ELEMENT>-O cblkwidth=100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O cblkheight=10</ELEMENT>
+    <ELEMENT>-O cblkheight=35</ELEMENT>
+    <ELEMENT>-O cblkheight=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O mode=int</ELEMENT>
+    <ELEMENT>-O mode=real</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O rate=0.13887</ELEMENT>
+    <ELEMENT>-O rate=0.2</ELEMENT>
+    <ELEMENT>-O rate=0.5</ELEMENT>
+    <ELEMENT>-O rate=1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O ilyrrates=-50</ELEMENT>
+    <ELEMENT>-O ilyrrates=-1</ELEMENT>
+    <ELEMENT>-O ilyrrates=0</ELEMENT>
+    <ELEMENT>-O ilyrrates=1</ELEMENT>
+    <ELEMENT>-O ilyrrates=50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O prg=lrcp</ELEMENT>
+    <ELEMENT>-O prg=rlcp</ELEMENT>
+    <ELEMENT>-O prg=rpcl</ELEMENT>
+    <ELEMENT>-O prg=pcrl</ELEMENT>
+    <ELEMENT>-O prg=cprl</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O nomct</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O numrlvls=1</ELEMENT>
+    <ELEMENT>-O numrlvls=10</ELEMENT>
+    <tmp>-O numrlvls=50</tmp>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O sop</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O eph</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O lazy</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O termall</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O segsym</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O vcausal</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O pterm</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O resetprob</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-O numgbits=1</ELEMENT>
+    <ELEMENT>-O numgbits=3</ELEMENT>
+    <ELEMENT>-O numgbits=5</ELEMENT>
+    <ELEMENT>-O numgbits=7</ELEMENT>
+    <ELEMENT>-O numgbits=9</ELEMENT>
+    <ELEMENT>-O numgbits=99</ELEMENT>
+  </PARAMETER>
+
+
+</root>

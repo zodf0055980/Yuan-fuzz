@@ -5,6 +5,14 @@
 	  
   <PARAMETER>
     <MUST>false</MUST>
+    <ELEMENT>-quality 0</ELEMENT>
+    <ELEMENT>-quality 25</ELEMENT>
+    <ELEMENT>-quality 50</ELEMENT>
+    <ELEMENT>-quality 75</ELEMENT>
+    <ELEMENT>-quality 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
     <ELEMENT>-grayscale</ELEMENT>
   </PARAMETER>
   <PARAMETER>
@@ -25,7 +33,44 @@
   </PARAMETER>
   <PARAMETER>
     <MUST>false</MUST>
+    <ELEMENT>-arithmetic</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-dct int</ELEMENT>
+    <ELEMENT>-dct fast</ELEMENT>
+    <ELEMENT>-dct float</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-restart 0</ELEMENT>
+    <ELEMENT>-restart 10</ELEMENT>
+    <ELEMENT>-restart 100</ELEMENT>
+    <ELEMENT>-restart 1000</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-smooth 1</ELEMENT>
+    <ELEMENT>-smooth 25</ELEMENT>
+    <ELEMENT>-smooth 50</ELEMENT>
+    <ELEMENT>-smooth 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-maxmemory 1</ELEMENT>
+    <ELEMENT>-maxmemory 10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-outfile /dev/null</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
     <ELEMENT>-memdst</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-report</ELEMENT>
   </PARAMETER>
   <PARAMETER>
     <MUST>false</MUST>
@@ -36,8 +81,24 @@
     <ELEMENT>-baseline</ELEMENT>
   </PARAMETER>
   <PARAMETER>
-    <MUST>true</MUST>
-    <ELEMENT>-outfile ./outtt</ELEMENT>
+    <MUST>false</MUST>
+    <ELEMENT>-qslots 0</ELEMENT>
+    <ELEMENT>-qslots 1</ELEMENT>
+    <ELEMENT>-qslots 2</ELEMENT>
+    <ELEMENT>-qslots 3</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-sample 1x1</ELEMENT>
+    <ELEMENT>-sample 1x4</ELEMENT>
+    <ELEMENT>-sample 4x1</ELEMENT>
+    <ELEMENT>-sample 4x4</ELEMENT>
+    <ELEMENT>-sample 3x3</ELEMENT>
+    <ELEMENT>-sample 2x2</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-scans ~/Yuan-fuzz/cjpeg_scans/test</ELEMENT>
   </PARAMETER>
 
 </root>

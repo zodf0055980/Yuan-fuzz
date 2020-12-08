@@ -43,7 +43,7 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 7. https://github.com/uclouvain/openjpeg/issues/1299
 8. https://github.com/uclouvain/openjpeg/issues/1302
 ### jasper
-1. https://github.com/jasper-software/jasper/issues/252
+1. https://github.com/jasper-software/jasper/issues/252 (CVE-2020-27828)
 
 ## Thanks
 Use [SQ-fuzz](https://github.com/fdgkhdkgh/SQ-Fuzz) to modify.

@@ -35,8 +35,8 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 2. https://github.com/libvips/libvips/issues/1868
 ### openjpeg
 1. https://github.com/uclouvain/openjpeg/issues/1283 (CVE-2020-27814)
-2. https://github.com/uclouvain/openjpeg/issues/1284
-3. https://github.com/uclouvain/openjpeg/issues/1286
+2. https://github.com/uclouvain/openjpeg/issues/1284 (CVE-2020-27823)
+3. https://github.com/uclouvain/openjpeg/issues/1286 (CVE-2020-27824)
 4. https://github.com/uclouvain/openjpeg/issues/1293
 5. https://github.com/uclouvain/openjpeg/issues/1294
 6. https://github.com/uclouvain/openjpeg/issues/1297

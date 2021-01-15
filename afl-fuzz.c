@@ -3169,7 +3169,6 @@ static void pivot_inputs(void)
   {
 
     u8 *nfn, *rsl = strrchr(q->fname, '/');
-    // u8 *argnfn; // add SQ-fuzz arg file
     u32 orig_id;
 
     if (!rsl)
@@ -3230,7 +3229,6 @@ static void pivot_inputs(void)
       else
         use_name = rsl;
       nfn = alloc_printf("%s/queue/id:%06u,orig:%s", out_dir, id, use_name);
-      // argnfn = alloc_printf("%s/queue_info/queue/id:%06u,orig:%s", out_dir, id, use_name);
 
 #else
 
@@ -3390,7 +3388,8 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
     fn = alloc_printf("%s/queue/id_%06u", out_dir, queued_paths);
 
 #endif /* ^!SIMPLE_FILES */
-    /* SQ-fuzz open arg file */
+
+    /* open arg file */
     if (argv_fuzz_flag == 1)
     {
 #ifndef SIMPLE_FILES
@@ -3404,7 +3403,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
 #endif /* ^!SIMPLE_FILES */
     }
 
-    /* SQ-fuzz save */
+    /* save */
 
     argv_add_to_queue(fn, len, 0, argv_array);
 
@@ -3431,7 +3430,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
     close(fd);
 
     keeping = 1;
-    /* SQ-fuzz write argv info */
+    /* write argv info */
     if (argv_fuzz_flag == 1)
     {
       qd = open(qn, O_WRONLY | O_CREAT | O_EXCL, 0600);
@@ -3613,7 +3612,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
 
   ck_free(fn);
 
-  /* SQ-fuzz write argv info */
+  /* write argv info */
   if (argv_fuzz_flag == 1)
   {
     qd = open(qn, O_WRONLY | O_CREAT | O_EXCL, 0600);
@@ -4135,6 +4134,24 @@ static void maybe_delete_out_dir(void)
   ck_free(fn);
 
   fn = alloc_printf("%s/queue", out_dir);
+  if (delete_files(fn, CASE_PREFIX))
+    goto dir_cleanup_failed;
+  ck_free(fn);
+
+  /* delete argv dir */
+  fn = alloc_printf("%s/queue_info/queue", out_dir);
+  if (delete_files(fn, CASE_PREFIX))
+    goto dir_cleanup_failed;
+  ck_free(fn);
+  fn = alloc_printf("%s/queue_info/hangs", out_dir);
+  if (delete_files(fn, CASE_PREFIX))
+    goto dir_cleanup_failed;
+  ck_free(fn);
+  fn = alloc_printf("%s/queue_info/crashes", out_dir);
+  if (delete_files(fn, CASE_PREFIX))
+    goto dir_cleanup_failed;
+  ck_free(fn);
+  fn = alloc_printf("%s/queue_info", out_dir);
   if (delete_files(fn, CASE_PREFIX))
     goto dir_cleanup_failed;
   ck_free(fn);
@@ -5067,7 +5084,7 @@ EXP_ST u8 common_fuzz_stuff(char **argv, u8 *out_buf, u32 len)
   return 0;
 }
 
-/* SQ-fuzz reset forkserv */
+/* reset forkserv */
 
 static void reset_forkserv_argvs(char **new_argvs)
 {
@@ -5097,7 +5114,7 @@ static void reset_forkserv_argvs(char **new_argvs)
   }
 }
 
-/* SQ-fuzz run rarget */
+/* run rarget */
 
 EXP_ST u8 argv_common_fuzz_stuff(char **argv, u8 *out_buf, u32 len, int argv_array[])
 {
@@ -7324,7 +7341,7 @@ abandon_entry:
 #undef FLIP_BIT
 }
 
-/* SQ-fuzz use argv array to malloc argv */
+/* use argv array to malloc argv */
 
 static void generate_arg(char **new_argv, char **argv, int argv_array[])
 {
@@ -7394,7 +7411,7 @@ static void generate_arg(char **new_argv, char **argv, int argv_array[])
   }
 }
 
-/* SQ-fuzz generate random argv */
+/* generate random argv */
 
 static void random_generate_arg(char **new_argv, char **argv, int argv_array[])
 {
@@ -7484,7 +7501,7 @@ static void random_generate_arg(char **new_argv, char **argv, int argv_array[])
   }
 }
 
-/* SQ-fuzz fuzz_one */
+/* argv fuzz_one */
 
 static char **argv_fuzz_one(char **argv)
 {
@@ -8169,7 +8186,7 @@ EXP_ST void setup_dirs_fds(void)
     PFATAL("Unable to create '%s'", tmp);
   ck_free(tmp);
 
-  /* SQ-fuzz 建立 argc 資料夾 */
+  /* create argc dir */
   if (argv_fuzz_flag)
   {
     tmp = alloc_printf("%s/queue_info", out_dir);
@@ -9055,7 +9072,6 @@ int main(int argc, char **argv)
       usage(argv[0]);
     }
 
-  // 沒有這些就印出使用方法且離開
   if (optind == argc || !in_dir || !out_dir)
     usage(argv[0]);
 
@@ -9124,18 +9140,15 @@ int main(int argc, char **argv)
 #endif /* HAVE_AFFINITY */
 
   // "echo core >/proc/sys/kernel/core_pattern"
-  // crash 回報給 cpu
   check_crash_handling();
   // CPU frequency
   check_cpu_governor();
 
   setup_post();
 
-  //初始化shared memory
   setup_shm();
   init_count_class16();
 
-  //創建工作資料夾（hang, queue....
   setup_dirs_fds();
 
   int first_argv[parameter_array_size];
@@ -9174,15 +9187,12 @@ int main(int argc, char **argv)
   //copy files from original dir to xxx/queue
   pivot_inputs();
 
-  //載入字典檔
   if (extras_dir)
     load_extras(extras_dir);
 
-  //resume時，定義這一次模糊測試的timeout為多少
   if (!timeout_given)
     find_timeout();
 
-  //偵測argvs裡有沒有"@@"
   detect_file_args(argv + optind + 1);
   if (argv_fuzz_flag)
   {
@@ -9192,7 +9202,6 @@ int main(int argc, char **argv)
   if (!out_file)
     setup_stdio_file();
 
-  // 檢查是否為 shell 且有無插樁
   check_binary(argv[optind]);
 
   start_time = get_cur_time();
@@ -9215,7 +9224,6 @@ int main(int argc, char **argv)
     now++;
   }
 
-  // 測試現有文集
   perform_dry_run(use_argv);
 
   cull_queue();
@@ -9289,7 +9297,7 @@ int main(int argc, char **argv)
         sync_fuzzers(use_argv);
     }
 
-    // SQ-fuzz
+    // argv-fuzz
     if (argv_fuzz_flag)
     {
       argv_no_forkserver = 1;

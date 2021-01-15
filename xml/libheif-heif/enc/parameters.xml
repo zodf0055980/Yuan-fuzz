@@ -1,0 +1,66 @@
+<root>
+  <FILE>
+    <ELEMENT>@@</ELEMENT>
+ </FILE>
+	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-q 0</ELEMENT>
+    <ELEMENT>-q 10</ELEMENT>
+    <ELEMENT>-q 50</ELEMENT>
+    <ELEMENT>-q 99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-L</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--thumb 50x50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-alpha</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-thumb-alpha</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-o /dev/null</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-v</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-b 5</ELEMENT>
+    <ELEMENT>-b 10</ELEMENT>
+    <ELEMENT>-b 20</ELEMENT>
+    <ELEMENT>-b 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-p x265:ctu=64</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--matrix_coefficients 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--colour_primaries 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--transfer_characteristic 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--full_range_flag 5</ELEMENT>
+  </PARAMETER>
+
+
+</root>

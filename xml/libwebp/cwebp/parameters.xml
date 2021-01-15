@@ -1,0 +1,216 @@
+<root>
+  <FILE>
+    <ELEMENT>@@ -o /dev/null</ELEMENT>
+ </FILE>
+	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-q 0</ELEMENT>
+    <ELEMENT>-q 50</ELEMENT>
+    <ELEMENT>-q 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alpha_q 0</ELEMENT>
+    <ELEMENT>-alpha_q 50</ELEMENT>
+    <ELEMENT>-alpha_q 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-preset default</ELEMENT>
+    <ELEMENT>-preset photo</ELEMENT>
+    <ELEMENT>-preset picture</ELEMENT>
+    <ELEMENT>-preset drawing</ELEMENT>
+    <ELEMENT>-preset icon</ELEMENT>
+    <ELEMENT>-preset text</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-z 0</ELEMENT>
+    <ELEMENT>-z 5</ELEMENT>
+    <ELEMENT>-z 9</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-m 0</ELEMENT>
+    <ELEMENT>-m 6</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-segments 1</ELEMENT>
+    <ELEMENT>-segments 2</ELEMENT>
+    <ELEMENT>-segments 3</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-size 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-psnr 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-sns 0</ELEMENT>
+    <ELEMENT>-sns 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-f 0</ELEMENT>
+    <ELEMENT>-f 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-sharpness 1</ELEMENT>
+    <ELEMENT>-sharpness 2</ELEMENT>
+    <ELEMENT>-sharpness 3</ELEMENT>
+    <ELEMENT>-sharpness 4</ELEMENT>
+    <ELEMENT>-sharpness 5</ELEMENT>
+    <ELEMENT>-sharpness 6</ELEMENT>
+    <ELEMENT>-sharpness 7</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-nostrong</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-sharp_yuv</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-partition_limit 0</ELEMENT>
+    <ELEMENT>-partition_limit 50</ELEMENT>
+    <ELEMENT>-partition_limit 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-pass 1</ELEMENT>
+    <ELEMENT>-pass 3</ELEMENT>
+    <ELEMENT>-pass 5</ELEMENT>
+    <ELEMENT>-pass 7</ELEMENT>
+    <ELEMENT>-pass 10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-qrange 0 100</ELEMENT>
+    <ELEMENT>-qrange 30 50</ELEMENT>
+    <ELEMENT>-qrange 50 50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-crop 1 1 11 11</ELEMENT>
+    <ELEMENT>-crop 5 5 10 10</ELEMENT>
+    <ELEMENT>-crop 8 8 11 11</ELEMENT>
+    <ELEMENT>-crop 10 10 10 10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-resize 10 10</ELEMENT>
+    <ELEMENT>-resize 7 7</ELEMENT>
+    <ELEMENT>-resize 100 100</ELEMENT>
+    <ELEMENT>-resize 99 99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-mt</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-low_memory</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-map 5</ELEMENT>
+    <ELEMENT>-map 6</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-print_psnr</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-print_ssim</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-print_lsim</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-d /dev/null</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alpha_method 0</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alpha_filter none</ELEMENT>
+    <ELEMENT>-alpha_filter fast</ELEMENT>
+    <ELEMENT>-alpha_filter best</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-exact</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-blend_alpha 0xc0e0d0</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-noalpha</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-lossless</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-near_lossless 0</ELEMENT>
+    <ELEMENT>-near_lossless 50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-hint photo</ELEMENT>
+    <ELEMENT>-hint picture</ELEMENT>
+    <ELEMENT>-hint graph</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-metadata all</ELEMENT>
+    <ELEMENT>-metadata none</ELEMENT>
+    <ELEMENT>-metadata exif</ELEMENT>
+    <ELEMENT>-metadata icc</ELEMENT>
+    <ELEMENT>-metadata xmp</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-short</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-quiet</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-noasm</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-progress</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-jpeg_like</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-af</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-pre 4</ELEMENT>
+  </PARAMETER>
+</root>

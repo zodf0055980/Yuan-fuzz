@@ -1,0 +1,191 @@
+<root>
+  <FILE>
+    <ELEMENT>-org @@</ELEMENT>
+ </FILE>
+
+	<PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-bf /dev/null</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-sw 200</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-sh 200</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-utype 0</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-savc 0</ELEMENT>
+    <ELEMENT>-savc 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-frms -1</ELEMENT>
+    <ELEMENT>-frms 0</ELEMENT>
+    <ELEMENT>-frms 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-frin -1</ELEMENT>
+    <ELEMENT>-frin 0</ELEMENT>
+    <ELEMENT>-frin 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-numtl -1</ELEMENT>
+    <ELEMENT>-numtl 0</ELEMENT>
+    <ELEMENT>-numtl 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-iper -1</ELEMENT>
+    <ELEMENT>-iper 0</ELEMENT>
+    <ELEMENT>-iper 2</ELEMENT>
+    <ELEMENT>-iper 4</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-nalsize -1</ELEMENT>
+    <ELEMENT>-nalsize 0</ELEMENT>
+    <ELEMENT>-nalsize 2</ELEMENT>
+    <ELEMENT>-nalsize 4</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-spsid 0</ELEMENT>
+    <ELEMENT>-spsid 1</ELEMENT>
+    <ELEMENT>-spsid 2</ELEMENT>
+    <ELEMENT>-spsid 3</ELEMENT>
+    <ELEMENT>-spsid 4</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-cabac 0</ELEMENT>
+    <ELEMENT>-cabac 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-complexity 0</ELEMENT>
+    <ELEMENT>-complexity 1</ELEMENT>
+    <ELEMENT>-complexity 2</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-complexity 0</ELEMENT>
+    <ELEMENT>-complexity 1</ELEMENT>
+    <ELEMENT>-complexity 2</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-denois 0</ELEMENT>
+    <ELEMENT>-denois 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-scene 0</ELEMENT>
+    <ELEMENT>-scene 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-bgd 0</ELEMENT>
+    <ELEMENT>-bgd 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-aq 0</ELEMENT>
+    <ELEMENT>-aq 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-ltr 0</ELEMENT>
+    <ELEMENT>-ltr 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-ltrnum 0</ELEMENT>
+    <ELEMENT>-ltrnum 1</ELEMENT>
+    <ELEMENT>-ltrnum 2</ELEMENT>
+    <ELEMENT>-ltrnum 3</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-ltrper 0</ELEMENT>
+    <ELEMENT>-ltrper 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-threadIdc 0</ELEMENT>
+    <ELEMENT>-threadIdc 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-loadbalancing 0</ELEMENT>
+    <ELEMENT>-loadbalancing 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-threadIdc 0</ELEMENT>
+    <ELEMENT>-threadIdc 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-deblockIdc 0</ELEMENT>
+    <ELEMENT>-deblockIdc 1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alphaOffset -5</ELEMENT>
+    <ELEMENT>-alphaOffset -1</ELEMENT>
+    <ELEMENT>-alphaOffset 0</ELEMENT>
+    <ELEMENT>-alphaOffset 1</ELEMENT>
+    <ELEMENT>-alphaOffset 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-betaOffset -5</ELEMENT>
+    <ELEMENT>-betaOffset -1</ELEMENT>
+    <ELEMENT>-betaOffset 0</ELEMENT>
+    <ELEMENT>-betaOffset 1</ELEMENT>
+    <ELEMENT>-betaOffset 5</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-rc -1</ELEMENT>
+    <ELEMENT>-rc 0</ELEMENT>
+    <ELEMENT>-rc 1</ELEMENT>
+    <ELEMENT>-rc 2</ELEMENT>
+    <ELEMENT>-rc 3</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-tarb 500</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-maxbrTotal 0</ELEMENT>
+    <ELEMENT>-maxbrTotal 500</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-maxqp 51</ELEMENT>
+    <ELEMENT>-maxqp 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-minqp 0</ELEMENT>
+    <ELEMENT>-minqp 1</ELEMENT>
+    <ELEMENT>-minqp 2</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-numl 0</ELEMENT>
+    <ELEMENT>-numl 1</ELEMENT>
+    <ELEMENT>-numl 2</ELEMENT>
+  </PARAMETER>
+</root>

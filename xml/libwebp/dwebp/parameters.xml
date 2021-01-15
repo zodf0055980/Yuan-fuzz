@@ -1,0 +1,75 @@
+<root>
+  <FILE>
+    <ELEMENT>@@ -o /dev/null</ELEMENT>
+ </FILE>
+	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-pam</ELEMENT>
+    <ELEMENT>-ppm</ELEMENT>
+    <ELEMENT>-bmp</ELEMENT>
+    <ELEMENT>-tiff</ELEMENT>
+    <ELEMENT>-pgm</ELEMENT>
+    <ELEMENT>-yuv</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-nofancy</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-nofilter</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-nodither</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-dither 0</ELEMENT>
+    <ELEMENT>-dither 50</ELEMENT>
+    <ELEMENT>-dither 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alpha_dither</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-mt</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-crop 1 1 11 11</ELEMENT>
+    <ELEMENT>-crop 5 5 10 10</ELEMENT>
+    <ELEMENT>-crop 8 8 11 11</ELEMENT>
+    <ELEMENT>-crop 10 10 10 10</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-resize 10 10</ELEMENT>
+    <ELEMENT>-resize 7 7</ELEMENT>
+    <ELEMENT>-resize 100 100</ELEMENT>
+    <ELEMENT>-resize 99 99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-flip</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-alpha</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-incremental</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-quiet</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-noasm</ELEMENT>
+  </PARAMETER>
+</root>

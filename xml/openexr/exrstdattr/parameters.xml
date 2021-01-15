@@ -1,0 +1,182 @@
+<root>
+  <FILE>
+    <ELEMENT>@@ /dev/null</ELEMENT>
+ </FILE>
+	  
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-part 0</ELEMENT>
+    <ELEMENT>-part 1</ELEMENT>
+    <ELEMENT>-part 10</ELEMENT>
+    <ELEMENT>-part 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-chromaticities 1 1 1 1 1 1 1 1</ELEMENT>
+    <ELEMENT>-chromaticities 10 10 10 10 10 10 10 10</ELEMENT>
+    <ELEMENT>-chromaticities 100 100 100 100 100 100 100 100</ELEMENT>
+    <ELEMENT>-chromaticities 1000 1000 1000 1000 1000 1000 1000 1000</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-whiteLuminance 10</ELEMENT>
+    <ELEMENT>-whiteLuminance 10.999</ELEMENT>
+    <ELEMENT>-whiteLuminance 99.999</ELEMENT>
+    <ELEMENT>-whiteLuminance 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-adoptedNeutral -1 -1</ELEMENT>
+    <ELEMENT>-adoptedNeutral 0 0</ELEMENT>
+    <ELEMENT>-adoptedNeutral 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-renderingTransform a</ELEMENT>
+    <ELEMENT>-renderingTransform aaaaaaaaaaaaaaaaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>true</MUST>
+    <ELEMENT>-lookModTransform a</ELEMENT>
+    <ELEMENT>-lookModTransform aaaaaaaaaaaaaaaaaaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-xDensity -1 -1</ELEMENT>
+    <ELEMENT>-xDensity 0 0</ELEMENT>
+    <ELEMENT>-xDensity 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-owner a</ELEMENT>
+    <ELEMENT>-owner aaaaaaaaaaaaaaaaaaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-comments a</ELEMENT>
+    <ELEMENT>-comments aaaaaaaaaaaaaaaaaaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-utcOffset 10</ELEMENT>
+    <ELEMENT>-utcOffset 10.999</ELEMENT>
+    <ELEMENT>-utcOffset 99.999</ELEMENT>
+    <ELEMENT>-utcOffset 0</ELEMENT>
+    <ELEMENT>-utcOffset -99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-longitude 10</ELEMENT>
+    <ELEMENT>-longitude 10.999</ELEMENT>
+    <ELEMENT>-longitude 99.999</ELEMENT>
+    <ELEMENT>-longitude 0</ELEMENT>
+    <ELEMENT>-longitude -99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-latitude 10</ELEMENT>
+    <ELEMENT>-latitude 10.999</ELEMENT>
+    <ELEMENT>-latitude 99.999</ELEMENT>
+    <ELEMENT>-latitude 0</ELEMENT>
+    <ELEMENT>-latitude -99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-altitude 10</ELEMENT>
+    <ELEMENT>-altitude 10.999</ELEMENT>
+    <ELEMENT>-altitude 99.999</ELEMENT>
+    <ELEMENT>-altitude 0</ELEMENT>
+    <ELEMENT>-altitude -99</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-focus 10</ELEMENT>
+    <ELEMENT>-focus 10.999</ELEMENT>
+    <ELEMENT>-focus 99.999</ELEMENT>
+    <ELEMENT>-focus infinity</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-expTime 10</ELEMENT>
+    <ELEMENT>-expTime 10.999</ELEMENT>
+    <ELEMENT>-expTime 99.999</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-aperture 10</ELEMENT>
+    <ELEMENT>-aperture 10.999</ELEMENT>
+    <ELEMENT>-aperture 99.999</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-isoSpeed 10</ELEMENT>
+    <ELEMENT>-isoSpeed 10.999</ELEMENT>
+    <ELEMENT>-isoSpeed 99.999</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-focus LATLONG</ELEMENT>
+    <ELEMENT>-envmap CUBE</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-xDensity -1 -1</ELEMENT>
+    <ELEMENT>-xDensity 0 0</ELEMENT>
+    <ELEMENT>-xDensity 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-framesPerSecond -1 -1</ELEMENT>
+    <ELEMENT>-framesPerSecond 0 0</ELEMENT>
+    <ELEMENT>-framesPerSecond 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-keyCode 0 0 0 0 0 1 20</ELEMENT>
+    <ELEMENT>-keyCode 99 99 999999 9999 119 15 120</ELEMENT>
+    <ELEMENT>-keyCode 50 50 1000 1000 50 5 60</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-timeCode -1 -1</ELEMENT>
+    <ELEMENT>-timeCode 0 0</ELEMENT>
+    <ELEMENT>-timeCode 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-wrapmodes clamp</ELEMENT>
+    <ELEMENT>-wrapmodes periodic,clamp</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-pixelAspectRatio 0</ELEMENT>
+    <ELEMENT>-pixelAspectRatio 1</ELEMENT>
+    <ELEMENT>-pixelAspectRatio 50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-screenWindowWidth 0</ELEMENT>
+    <ELEMENT>-screenWindowWidth 1</ELEMENT>
+    <ELEMENT>-screenWindowWidth 50</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-screenWindowCenter -1 -1</ELEMENT>
+    <ELEMENT>-screenWindowCenter 0 0</ELEMENT>
+    <ELEMENT>-screenWindowCenter 100 100</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-string aaaaaaa aaaaaaaaaa</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-float aaaaaaa -1</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-int aaaaaaa -1</ELEMENT>
+  </PARAMETER>
+  
+
+</root>

@@ -8838,7 +8838,7 @@ int main(int argc, char **argv)
   srandom(tv.tv_sec ^ tv.tv_usec ^ getpid());
   char *xml_position;
 
-  while ((opt = getopt(argc, argv, "+i:o:s:w:r:f:m:b:t:T:dnCB:S:M:x:QV")) > 0)
+  while ((opt = getopt(argc, argv, "+i:o:s:wrf:m:b:t:T:dnCB:S:M:x:QV")) > 0)
 
     switch (opt)
     {

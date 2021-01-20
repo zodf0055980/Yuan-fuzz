@@ -7382,9 +7382,21 @@ static void generate_arg(char **new_argv, char **argv, int argv_array[])
 
   if (argv_front_flag)
   {
-    new_argv[argv_index] = (char *)ck_alloc(sizeof(char) * strlen(file_parameter) + 1);
-    sprintf(new_argv[argv_index], "%s", file_parameter);
-    argv_index++;
+    char *substr = NULL;
+    char buf[parameter_strings_long];
+    strcpy(buf, file_parameter);
+    substr = strtok(buf, " ");
+
+    while (substr != NULL)
+    {
+      new_argv[argv_index] = (char *)ck_alloc(sizeof(char) * strlen(substr) + 1);
+      sprintf(new_argv[argv_index], "%s", substr);
+      argv_index++;
+
+      substr = strtok(NULL, " ");
+    }
+    // new_argv[argv_index] = (char *)ck_alloc(sizeof(char) * strlen(file_parameter) + 1);
+    // sprintf(new_argv[argv_index], "%s", file_parameter);
   }
 
   for (int i = 0; i < parameter_count; i++)

@@ -6,6 +6,7 @@
 
 #define parameter_array_size 100
 #define parameter_strings_long 100
+#define file_parameter_strings_long 200
 #define variable_array_size 30
 
 struct parameter_list
@@ -15,7 +16,7 @@ struct parameter_list
     char parameter[variable_array_size][parameter_strings_long];
 };
 
-char file_parameter[parameter_strings_long];
+char file_parameter[file_parameter_strings_long];
 struct parameter_list parameter[parameter_array_size];
 int parameter_count;
 

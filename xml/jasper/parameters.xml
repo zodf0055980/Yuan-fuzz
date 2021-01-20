@@ -3,10 +3,6 @@
     <ELEMENT>--input @@</ELEMENT>
  </FILE>
 
-	<PARAMETER>
-    <MUST>true</MUST>
-    <ELEMENT>--input-format pgx</ELEMENT>
-  </PARAMETER>
   <PARAMETER>
     <MUST>true</MUST>
     <ELEMENT>--output /dev/null</ELEMENT>

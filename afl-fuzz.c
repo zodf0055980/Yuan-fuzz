@@ -3157,7 +3157,7 @@ static void nuke_resume_dir(void);
 /* Create hard links for input test cases in the output directory, choosing
    good names and pivoting accordingly. */
 
-static void pivot_inputs(void)
+static void pivot_inputs(char **argv)
 {
 
   struct queue_entry *q = queue;
@@ -3168,7 +3168,7 @@ static void pivot_inputs(void)
   while (q)
   {
 
-    u8 *nfn, *rsl = strrchr(q->fname, '/');
+    u8 *nfn, *argnfn, *rsl = strrchr(q->fname, '/');
     u32 orig_id;
 
     if (!rsl)
@@ -3195,7 +3195,7 @@ static void pivot_inputs(void)
 
       resuming_fuzz = 1;
       nfn = alloc_printf("%s/queue/%s", out_dir, rsl);
-      // argnfn = alloc_printf("%s/queue_info/queue/%s", out_dir, rsl);
+      argnfn = alloc_printf("%s/queue_info/queue/%s", out_dir, rsl);
       /* Since we're at it, let's also try to find parent and figure out the
          appropriate depth for this entry. */
 
@@ -3229,6 +3229,7 @@ static void pivot_inputs(void)
       else
         use_name = rsl;
       nfn = alloc_printf("%s/queue/id:%06u,orig:%s", out_dir, id, use_name);
+      argnfn = alloc_printf("%s/queue_info/queue/id:%06u,orig:%s", out_dir, id, use_name);
 
 #else
 
@@ -3243,6 +3244,24 @@ static void pivot_inputs(void)
     link_or_copy(q->fname, nfn);
     ck_free(q->fname);
     q->fname = nfn;
+
+    /* save initial argv */
+    if (argv_fuzz_flag == 1)
+    {
+      s32 qd;
+      qd = open(argnfn, O_WRONLY | O_CREAT | O_EXCL, 0600);
+      if (qd < 0)
+        PFATAL("Unable to create '%s'", argnfn);
+      char **now = argv;
+      while (*now)
+      {
+        ck_write(qd, *now, strlen(*now), argnfn);
+        ck_write(qd, " ", 1, argnfn);
+        now++;
+      }
+      close(qd);
+      ck_free(argnfn);
+    }
 
     /* Make sure that the passed_det value carries over, too. */
 
@@ -3443,7 +3462,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
         ck_write(qd, " ", 1, qn);
         now++;
       }
-      close(fd);
+      close(qd);
     }
   }
 
@@ -3626,8 +3645,8 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
       now++;
     }
     close(fd);
+    ck_free(qn);
   }
-  ck_free(qn);
   return keeping;
 }
 
@@ -9153,39 +9172,39 @@ int main(int argc, char **argv)
 
   int first_argv[parameter_array_size];
   memset(first_argv, 0, sizeof(first_argv));
-  if (argv_random_first == 0)
+  if (argv_fuzz_flag == 1)
   {
-    for (int i = 0; i < parameter_count; i++)
+    if (argv_random_first == 0)
     {
-      if (parameter[i].must)
+      for (int i = 0; i < parameter_count; i++)
       {
-        first_argv[i] = 1;
+        if (parameter[i].must)
+        {
+          first_argv[i] = 1;
+        }
       }
     }
-  }
-  else
-  {
-    for (int i = 0; i < parameter_count; i++)
+    else
     {
-      if (parameter[i].must)
+      for (int i = 0; i < parameter_count; i++)
       {
-        first_argv[i] = 1;
-      }
-      else
-      {
-        int ur = UR(parameter[i].count + 1);
-        first_argv[i] = ur;
-        OKF("parameter coint = %d", parameter[i].count);
-        OKF("ur = %d", ur);
+        if (parameter[i].must)
+        {
+          first_argv[i] = 1;
+        }
+        else
+        {
+          int ur = UR(parameter[i].count + 1);
+          first_argv[i] = ur;
+          OKF("parameter coint = %d", parameter[i].count);
+          OKF("ur = %d", ur);
+        }
       }
     }
   }
 
   read_testcases(first_argv);
   load_auto();
-
-  //copy files from original dir to xxx/queue
-  pivot_inputs();
 
   if (extras_dir)
     load_extras(extras_dir);
@@ -9223,6 +9242,9 @@ int main(int argc, char **argv)
     OKF("%s", *now);
     now++;
   }
+
+  //copy files from original dir to xxx/queue
+  pivot_inputs(use_argv);
 
   perform_dry_run(use_argv);
 

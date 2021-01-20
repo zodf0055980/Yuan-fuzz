@@ -96,9 +96,5 @@
     <ELEMENT>-sample 3x3</ELEMENT>
     <ELEMENT>-sample 2x2</ELEMENT>
   </PARAMETER>
-  <PARAMETER>
-    <MUST>false</MUST>
-    <ELEMENT>-scans ~/Yuan-fuzz/cjpeg_scans/test</ELEMENT>
-  </PARAMETER>
 
 </root>

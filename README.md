@@ -1,10 +1,14 @@
 # Yuan-fuzz
-Fuzzer run with argv based on AFL
+Fuzzer runs with argv information and uses k-means clustering to group seed. It's based on AFL.
+
 ## How to use
 Use `-h` `--help` to know target program options, and use it to write XML file to help fuzzing.
 I give some [XML examples](https://github.com/zodf0055980/Yuan-fuzz/tree/main/xml) here, maybe could help to write XML file.
+
 ## Technology
 Add one fuzzing stage named arg_gen, it automatically generates random argv using xml. If find new path, add argv information in queue. When arg_gen stage end, restart forkserver with argv information in queue. 
+Use [k-means clustering](https://github.com/zodf0055980/k-means-AFL) to group seed in seed pool to improve seed selection. 
+
 ## How to use
 Install [libxml2](http://xmlsoft.org/downloads.html) first.
 
@@ -14,7 +18,9 @@ $ make
 ```
 use [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) to be running example.
 ``` 
-Yuan-fuzz -i input -o output -m none -s ~/XML_PATH/parameters.xml -- ~/TARGET_PATH/libjpeg-turbo/build/cjpeg
+$ python3 group_seed.py [port]
+# Another Terminal
+$ Yuan-fuzz -i [testcase_dir] -o [output_dir] -s [~/XML_PATH/parameters.xml] -p [port] -- ~/TARGET_PATH/libjpeg-turbo/build/cjpeg
 ```
 We also add some option.
 ```

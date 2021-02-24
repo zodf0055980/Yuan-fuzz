@@ -68,6 +68,10 @@
 #include <sys/ioctl.h>
 #include <sys/file.h>
 
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+
 #if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
 #include <sys/sysctl.h>
 #endif /* __APPLE__ || __FreeBSD__ || __OpenBSD__ */
@@ -87,6 +91,12 @@
 #else
 #define EXP_ST static
 #endif /* ^AFL_LIB */
+
+/* Local port to communicate with python module. */
+int PORT = 0;
+
+/* sockt to communicate with python module. */
+int sock;
 
 /* Lots of globals, but mostly for the status UI and other things where it
    really makes no sense to haul them around as function parameters. */
@@ -5576,7 +5586,7 @@ static u8 fuzz_one(char **argv)
        The odds of skipping stuff are higher for already-fuzzed inputs and
        lower for never-fuzzed entries. */
 
-    if (queue_cycle > 1 && !queue_cur->was_fuzzed)
+    if (!queue_cur->was_fuzzed)
     {
 
       if (UR(100) < SKIP_NFAV_NEW_PROB)
@@ -8825,6 +8835,37 @@ static void save_cmdline(u32 argc, char **argv)
 
 #ifndef AFL_LIB
 
+int connect_socket()
+{
+  if (PORT == 0)
+  {
+    perror("You should define port by -p");
+    exit(0);
+  }
+  /* connect to python module */
+  int sock = 0;
+  struct sockaddr_in serv_addr;
+  if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+  {
+    perror("Socket creation error");
+    exit(0);
+  }
+  memset(&serv_addr, '0', sizeof(serv_addr));
+  serv_addr.sin_family = AF_INET;
+  serv_addr.sin_port = htons(PORT);
+  if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0)
+  {
+    perror("Invalid address/ Address not supported");
+    exit(0);
+  }
+  if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
+  {
+    perror("Connection Failed");
+    exit(0);
+  }
+  return sock;
+}
+
 /* Main entry point */
 
 int main(int argc, char **argv)
@@ -8850,7 +8891,7 @@ int main(int argc, char **argv)
   srandom(tv.tv_sec ^ tv.tv_usec ^ getpid());
   char *xml_position;
 
-  while ((opt = getopt(argc, argv, "+i:o:s:wrf:m:b:t:T:dnCB:S:M:x:QV")) > 0)
+  while ((opt = getopt(argc, argv, "+i:o:s:wrf:m:b:t:T:dnCB:S:M:x:p:QV")) > 0)
 
     switch (opt)
     {
@@ -8942,6 +8983,13 @@ int main(int argc, char **argv)
       if (extras_dir)
         FATAL("Multiple -x options not supported");
       extras_dir = optarg;
+      break;
+
+    case 'p': /* port */
+
+      if (PORT)
+        FATAL("Multiple -p options not supported");
+      PORT = atoi(optarg);
       break;
 
     case 't':
@@ -9269,6 +9317,11 @@ int main(int argc, char **argv)
   write_stats_file(0, 0, 0);
   save_auto();
 
+  sock = connect_socket();
+  OKF("success connect socket");
+
+  send(sock, out_dir, strlen(out_dir), 0);
+
   if (stop_soon)
     goto stop_fuzzing;
 
@@ -9282,54 +9335,45 @@ int main(int argc, char **argv)
       goto stop_fuzzing;
   }
 
-  while (1)
+  int initial_seed_count = 0;
+  queue_cur = queue;
+  while (queue_cur)
   {
+    initial_seed_count++;
+    queue_cur = queue_cur->next;
+  }
+  // fuzz init
+  OKF("initial_seed_count = %d", initial_seed_count);
+  queue_cur = queue;
+  current_entry = 0;
+  cur_skipped_paths = 0;
+  queue_cycle++;
 
+  int i;
+  for (i = 0; i < initial_seed_count; i++)
+  {
     u8 skipped_fuzz;
-
     cull_queue();
 
-    if (!queue_cur)
+    while (seek_to)
     {
-
-      queue_cycle++;
-      current_entry = 0;
-      cur_skipped_paths = 0;
-      queue_cur = queue;
-
-      while (seek_to)
-      {
-        current_entry++;
-        seek_to--;
-        queue_cur = queue_cur->next;
-      }
-      show_stats();
-
-      if (not_on_tty)
-      {
-        ACTF("Entering queue cycle %llu.", queue_cycle);
-        fflush(stdout);
-      }
-
-      /* If we had a full queue cycle with no new finds, try
-         recombination strategies next. */
-
-      if (queued_paths == prev_queued)
-      {
-
-        if (use_splicing)
-          cycles_wo_finds++;
-        else
-          use_splicing = 1;
-      }
-      else
-        cycles_wo_finds = 0;
-
-      prev_queued = queued_paths;
-
-      if (sync_id && queue_cycle == 1 && getenv("AFL_IMPORT_FIRST"))
-        sync_fuzzers(use_argv);
+      current_entry++;
+      seek_to--;
+      queue_cur = queue_cur->next;
     }
+
+    show_stats();
+
+    if (not_on_tty)
+    {
+      ACTF("Start fuzz init seed");
+      fflush(stdout);
+    }
+
+    prev_queued = queued_paths;
+
+    if (sync_id && queue_cycle == 1 && getenv("AFL_IMPORT_FIRST"))
+      sync_fuzzers(use_argv);
 
     // argv-fuzz
     if (argv_fuzz_flag)
@@ -9340,6 +9384,58 @@ int main(int argc, char **argv)
       argv_no_forkserver = 0;
     }
 
+    skipped_fuzz = fuzz_one(use_argv);
+
+    if (!stop_soon && sync_id && !skipped_fuzz)
+    {
+      if (!(sync_interval_cnt++ % SYNC_INTERVAL))
+        sync_fuzzers(use_argv);
+    }
+
+    if (!stop_soon && exit_1)
+      stop_soon = 2;
+    queue_cur = queue_cur->next;
+    current_entry++;
+  }
+
+  char send_init_seed_count[20];
+  snprintf(send_init_seed_count, 20, "%d", initial_seed_count);
+  send(sock, send_init_seed_count, strlen(send_init_seed_count), 0);
+
+  int number = 0;
+  char buf[16];
+  memset(buf, 0, 16);
+  if (read(sock, buf, 5) == -1)
+  {
+    perror("Socket creation error");
+    exit(0);
+  }
+
+  number = atoi(buf);
+  queue_cur = queue;
+  for (int i = 0; i < number; i++)
+  {
+    queue_cur = queue_cur->next;
+  }
+  current_entry = number;
+
+  // original fuzz loop
+
+  while (1)
+  {
+
+    u8 skipped_fuzz;
+    cull_queue();
+
+    // argv-fuzz
+    if (argv_fuzz_flag)
+    {
+      argv_no_forkserver = 1;
+      use_argv = argv_fuzz_one(use_argv);
+      reset_forkserv_argvs(use_argv);
+      argv_no_forkserver = 0;
+    }
+    int argv_find_path = queued_paths;
     skipped_fuzz = fuzz_one(use_argv);
 
     if (!stop_soon && sync_id && !skipped_fuzz)
@@ -9355,8 +9451,36 @@ int main(int argc, char **argv)
     if (stop_soon)
       break;
 
-    queue_cur = queue_cur->next;
-    current_entry++;
+    if (!skipped_fuzz)
+    {
+      if (argv_find_path == queued_paths)
+      {
+        send(sock, "notf", 4, 0);
+      }
+      else
+      {
+        send(sock, "next", 4, 0);
+      }
+    }
+    else
+    {
+      send(sock, "skip", 4, 0);
+    }
+
+    memset(buf, 0, 16);
+    if (read(sock, buf, 5) == -1)
+    {
+      perror("Socket creation error");
+      exit(0);
+    }
+
+    number = atoi(buf);
+    queue_cur = queue;
+    for (int i = 0; i < number; i++)
+    {
+      queue_cur = queue_cur->next;
+    }
+    current_entry = number;
   }
 
   if (queue_cur)

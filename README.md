@@ -47,12 +47,19 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 8. https://github.com/uclouvain/openjpeg/issues/1302 (CVE-2020-27845)
 ### jasper
 1. https://github.com/jasper-software/jasper/issues/252 (CVE-2020-27828)
+2. https://github.com/jasper-software/jasper/issues/263
 ### libsndfile
 1. https://github.com/libsndfile/libsndfile/issues/675
 ### libxls
 1. https://github.com/libxls/libxls/issues/90
 ### aom
 1. https://bugs.chromium.org/p/aomedia/issues/detail?id=2905&q=&can=1
+### libredwg
+1. https://github.com/LibreDWG/libredwg/issues/320
+2. https://github.com/LibreDWG/libredwg/issues/323
+3. https://github.com/LibreDWG/libredwg/issues/324
+4. https://github.com/LibreDWG/libredwg/issues/325
+5. https://github.com/LibreDWG/libredwg/issues/321
 ---
 ### libvips (not use fuzz)
 1. https://github.com/libvips/libvips/issues/1867

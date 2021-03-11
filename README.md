@@ -58,8 +58,8 @@ If your xml file have a lot of argv, maybe you have to change some define value 
 1. https://github.com/LibreDWG/libredwg/issues/320
 2. https://github.com/LibreDWG/libredwg/issues/323
 3. https://github.com/LibreDWG/libredwg/issues/324
-4. https://github.com/LibreDWG/libredwg/issues/325
-5. https://github.com/LibreDWG/libredwg/issues/321
+4. https://github.com/LibreDWG/libredwg/issues/321
+5. https://github.com/LibreDWG/libredwg/issues/325 (non release code-path)
 ---
 ### libvips (not use fuzz)
 1. https://github.com/libvips/libvips/issues/1867

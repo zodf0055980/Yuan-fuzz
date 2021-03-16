@@ -1,32 +1,61 @@
 # Yuan-fuzz
-Fuzzer runs with argv information and uses k-means clustering to group seed. It's based on AFL.
+Fuzzer runs with argv information and uses k-means clustering to group seed.
 
-## How to use
-Use `-h` `--help` to know target program options, and use it to write XML file to help fuzzing.
-I give some [XML examples](https://github.com/zodf0055980/Yuan-fuzz/tree/main/xml) here, maybe could help to write XML file.
+```
+  Written and maintained by zodf0055980 <zodf0055980@gmail.com>
+  Based on American Fuzzy Lop by Michal Zalewski
+```
 
 ## Technology
-Add one fuzzing stage named arg_gen, it automatically generates random argv using xml. If find new path, add argv information in queue. When arg_gen stage end, restart forkserver with argv information in queue. 
-Use [k-means clustering](https://github.com/zodf0055980/k-means-AFL) to group seed in seed pool to improve seed selection. 
+Yuan-fuzz is a fuzzer implementing a technique to generate argv in addition fuzzing stage named arg_gen. It can help to fuzz binary target that has a lot of argv can use. 
 
-## How to use
+And I also use k-means clustering to the group in the seed pool to improve seed selection likes [k-means-AFL](https://github.com/zodf0055980/k-means-AFL).
+
+## Usage
 Install [libxml2](http://xmlsoft.org/downloads.html) first.
 
 Build it.
 ```
 $ make
 ```
-use [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) to be running example.
-``` 
+Use `-h` `--help` to know target program options, and use it to write XML file to help fuzzing.
+I give some [XML examples](https://github.com/zodf0055980/Yuan-fuzz/tree/main/xml) here, maybe could help to write XML file.
+
+When run fuzzer, you should open our seed selection server first.
+```
 $ python3 group_seed.py [port]
-# Another Terminal
-$ Yuan-fuzz -i [testcase_dir] -o [output_dir] -s [~/XML_PATH/parameters.xml] -p [port] -- ~/TARGET_PATH/libjpeg-turbo/build/cjpeg
 ```
-We also add some option.
+
+The command line usage of Yuan-fuzz is similar to AFL.
 ```
--s xml        - add argv file information
+$ Yuan-fuzz -i [testcase_dir] -o [output_dir] -s [~/XML_PATH/parameters.xml] -p [port] -- [Target program]
+```
+I also implement two command that can help arg_gen stage.
+```
 -w            - let file_path in front of argv
 -r            - argv random initial
+```
+
+## Example
+Use [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) to be example.
+```
+$ git clone git@github.com:libjpeg-turbo/libjpeg-turbo.git
+```
+Build with instrumentation, you can use other compiler.
+```
+$ export CC=~/Yuan-fuzz/afl-gcc                                       
+$ export CXX=~/Yuan-fuzz/afl-g++
+$ export AFL_USE_ASAN=1 ;
+$ cd libjpeg-turbo
+$ mkdir build && cd build
+$ cmake -G"Unix Makefiles" ..
+$ make
+```
+Run fuzzer
+``` 
+$ python3 group_seed.py 8888
+# Another Terminal
+$ Yuan-fuzz -i ./testcases/images/jpeg -o fuzz_output -m none -s ./xml/libjpeg-turbo/djpeg/parameters.xml -p 8888 -- ~/TARGET_PATH/libjpeg-turbo/build/djpeg
 ```
 If your xml file have a lot of argv, maybe you have to change some define value in parse.h.
 ## Bug reported

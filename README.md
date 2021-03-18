@@ -58,6 +58,15 @@ $ python3 group_seed.py 8888
 $ Yuan-fuzz -i ./testcases/images/jpeg -o fuzz_output -m none -s ./xml/libjpeg-turbo/djpeg/parameters.xml -p 8888 -- ~/TARGET_PATH/libjpeg-turbo/build/djpeg
 ```
 If your xml file have a lot of argv, maybe you have to change some define value in parse.h.
+
+## Interpreting output
+It will have addition subdirectories created within the output directory and updated in real time.
+
+- queue_info/queue
+- queue_info/crashes
+- queue_info/hangs
+
+It save all seed running parameters and one-to-one correspondence with seed in queue, crashes, hangs subdirectories.
 ## Bug reported
 ### libjpeg-turbo
 1. https://github.com/libjpeg-turbo/libjpeg-turbo/issues/441

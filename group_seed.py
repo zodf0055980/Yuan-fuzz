@@ -60,8 +60,11 @@ for filename in seed_list:
         argv_file_padding = argv_file_padding + 1
     print(argv)
     tmp_list = []
-    out = subprocess.check_output(
-        ['./afl-showmap', '-q', '-e', '-o', '/dev/stdout', '-m', 'none', '-t', '500'] + argv)
+    try:
+        out = subprocess.check_output(
+            ['./afl-showmap', '-q', '-e', '-o', '/dev/stdout', '-m', 'none', '-t', '500'] + argv)
+    except subprocess.CalledProcessError:
+        print("find a crash")
     for line in out.splitlines():
         edge = line.split(b':')[0]
         tmp_cnt.append(edge)
@@ -149,7 +152,7 @@ while(1):
                 out = subprocess.check_output(
                     ['./afl-showmap', '-q', '-e', '-o', '/dev/stdout', '-m', 'none', '-t', '500'] + argv)
             except subprocess.CalledProcessError:
-                print("find a crash")
+                print("This is a crash file")
             for line in out.splitlines():
                 edge = line.split(b':')[0]
                 tmp_cnt.append(edge)
@@ -212,7 +215,7 @@ while(1):
                 out = subprocess.check_output(
                     ['./afl-showmap', '-q', '-e', '-o', '/dev/stdout', '-m', 'none', '-t', '500'] + argv)
             except subprocess.CalledProcessError:
-                print("This is a crash file")
+                print("find crash !!")
             tmp_list = []
             for line in out.splitlines():
                 edge = line.split(b':')[0]

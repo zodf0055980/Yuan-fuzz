@@ -7580,7 +7580,7 @@ static char **argv_fuzz_one(char **argv)
   memcpy(out_buf, in_buf, len);
 
   stage_short = "arg1";
-  stage_max = 100;
+  stage_max = parameter_count * parameter_count;
   stage_name = "arg_gen";
   char **new_argv;
   int run_argv[parameter_array_size];

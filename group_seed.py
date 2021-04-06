@@ -8,9 +8,12 @@ from collections import Counter
 from sklearn import cluster, metrics
 import socket
 import signal
+import random
 
 kmeans_group = 0
 seed_group = []
+
+# set signal let ctrl c print all seed info
 
 
 def signal_handler(sig, frame):
@@ -21,6 +24,7 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 
+# set socket
 signal.signal(signal.SIGINT, signal_handler)
 HOST = '127.0.0.1'
 PORT = int(sys.argv[1])
@@ -29,12 +33,14 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((HOST, PORT))
 sock.listen(1)
 conn, addr = sock.accept()
+
+# get seed pool path
 dirpath = conn.recv(250).decode("utf-8")
 print(f"[*] dirpath = {dirpath}")
 
+# get initial seed
 init_seed_count = int(conn.recv(8))
 print(f"[*] init_seed_count = {init_seed_count}")
-
 seed_list = [os.path.basename(x) for x in glob.glob(dirpath+'/queue/id*')]
 seed_list.sort()
 
@@ -89,23 +95,30 @@ kmeans_fit = cluster.KMeans(n_clusters=kmeans_group).fit(fit_bitmap)
 cluster_labels = kmeans_fit.labels_
 print("[*] cluster_labels")
 print(cluster_labels)
-print("[*] show group")
+
+# add seed in seed group
 for i in range(0, init_seed_count):
     seed_group[cluster_labels[i]].append({"id": i, "skip": 0, "fuzzcount": 1})
 for i in range(init_seed_count, len(cluster_labels)):
     seed_group[cluster_labels[i]].append({"id": i, "skip": 0, "fuzzcount": 0})
+
+print("[*] show group")
 for i in range(kmeans_group):
     seed_group[i] = sorted(seed_group[i], key=lambda k: k['fuzzcount'])
     print(f"group {i} : {', '.join(str(x['id'])for x in seed_group[i]) }")
 
-print(f"[*] run rarget = {seed_group[0][0]['id']}")
-conn.sendall(str(seed_group[0][0]['id']).encode(encoding="utf-8"))
 run_group = 0
+print(f"[*] run rarget = {seed_group[run_group][0]['id']}")
+conn.sendall(str(seed_group[run_group][0]['id']).encode(encoding="utf-8"))
+
+# if seed increase 1/2 , regroup
 seed_count = len(cluster_labels)
 re_group = seed_count + (seed_count // 2)
+
+# when run max_skip not find new path, choose next group
 max_skip = 2
 skip = max_skip
-regroup = 0
+
 while(1):
     require = conn.recv(5)
     print(f"[*] get {require}")
@@ -113,20 +126,28 @@ while(1):
     # get current find path
     seed_list = [os.path.basename(x) for x in glob.glob(dirpath+'/queue/id*')]
     seed_list.sort()
+
     # regroup
     if(len(seed_list) > re_group):
-        regroup = 1
-        seed_group[run_group][0]['fuzzcount'] = seed_group[run_group][0]['fuzzcount'] + 1
         print(f"[*] re group")
-        # update
+
+        if(require == b'skip'):
+            # maybe find in argv_gen and skip fuzz_one
+            seed_group[run_group][0]['skip'] = seed_group[run_group][0]['skip'] + 1
+        else:
+            seed_group[run_group][0]['fuzzcount'] = seed_group[run_group][0]['fuzzcount'] + 1
+
+        # save all group seed
         all_seed = []
         print(f"old group")
         for i in range(kmeans_group):
             print(f"group {i} : {seed_group[i]}")
             for s in seed_group[i]:
                 all_seed.append(s)
+        # save find seed
         for i in range(seed_count, len(seed_list)):
             all_seed.append({"id": i, "skip": 0, "fuzzcount": 0})
+
         all_seed = sorted(all_seed, key=lambda k: k['id'])
         print(all_seed)
 
@@ -136,7 +157,6 @@ while(1):
         raw_bitmap = {}
         tmp_cnt = []
         out = ''
-
         for filename in seed_list:
             f = open(dirpath+'/queue_info/queue/' + filename, 'r')
             argv = f.readline().split()
@@ -188,15 +208,23 @@ while(1):
         for i in range(kmeans_group):
             seed_group.append([])
 
+        # add all seed in seed group
         for i in range(0, len(cluster_labels)):
             seed_group[cluster_labels[i]].append(all_seed[i])
+
         print("[*] show new group")
         for i in range(kmeans_group):
             seed_group[i] = sorted(
                 seed_group[i], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
             print(
                 f"group {i} : {', '.join(str(x['id'])for x in seed_group[i]) }")
-    # have new path, but maybe find from argv, so predict first.
+
+        # send run seed
+        print(f"[*] run rarget = {seed_group[0][0]['id']}")
+        conn.sendall(str(seed_group[0][0]['id']).encode(encoding="utf-8"))
+        continue
+
+    # have new path, but maybe only find from argv_gen, so predict first.
     elif(seed_count < len(seed_list)):
         # predict
         print(f"[*] find new path {seed_count} to {len(seed_list)-1}")
@@ -239,18 +267,13 @@ while(1):
 
     # find new path in fuzz_one
     if(require == b'next'):
-        if (regroup == 1):
-            run_group = 0
-            print(f"[*] run rarget = {seed_group[0][0]['id']}")
-            conn.sendall(str(seed_group[0][0]['id']).encode(encoding="utf-8"))
-        else:
-            seed_group[run_group][0]['fuzzcount'] = seed_group[run_group][0]['fuzzcount'] + 1
-            # sort first
-            seed_group[run_group] = sorted(
-                seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
-            # send next seed
-            conn.sendall(str(seed_group[run_group]
-                             [0]['id']).encode(encoding="utf-8"))
+        seed_group[run_group][0]['fuzzcount'] = seed_group[run_group][0]['fuzzcount'] + 1
+        # sort first
+        seed_group[run_group] = sorted(
+            seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
+        # send next seed
+        conn.sendall(str(seed_group[run_group]
+                         [0]['id']).encode(encoding="utf-8"))
 
     elif(require == b'notf'):
         # no new path
@@ -258,43 +281,44 @@ while(1):
         # sort first
         seed_group[run_group] = sorted(
             seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
-        # run next group
-        run_group = (run_group + 1) % kmeans_group
-        # prevent seed_group is null
-        while not seed_group[run_group]:
-            run_group = (run_group + 1) % kmeans_group
-        seed_group[run_group] = sorted(
-            seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
-        conn.sendall(str(seed_group[run_group][0]
-                         ['id']).encode(encoding="utf-8"))
-        # fuzz count ++
-        print(f"[*] next group {run_group}")
-        print(f"[*] run target = {seed_group[run_group][0]['id']}")
 
-    elif(require == b'skip'):
-        seed_group[run_group][0]['skip'] = seed_group[run_group][0]['skip'] + 1
         if(skip == 0):
-            # run bext group and reset skip
             skip = max_skip
+            # run next group
             run_group = (run_group + 1) % kmeans_group
-            while not seed_group[run_group]:
+
+            # prevent seed_group is null
+            while((not seed_group[run_group]) or seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
                 run_group = (run_group + 1) % kmeans_group
-            seed_group[run_group] = sorted(
-                seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
             conn.sendall(str(seed_group[run_group][0]
                              ['id']).encode(encoding="utf-8"))
             print(f"[*] next group {run_group}")
             print(f"[*] run target = {seed_group[run_group][0]['id']}")
         else:
             skip = skip - 1
-            seed_group[run_group] = sorted(
-                seed_group[run_group], key=lambda k: (k['fuzzcount'], k['skip']), reverse=False)
-            # this group is fuzz already
-            if(seed_group[run_group][0]['skip'] > 0 or seed_group[run_group][0]['fuzzcount'] > 0):
-                print(f"[*] group {run_group} is all skip or been fuzz")
-                run_group = (run_group + 1) % kmeans_group
-                while not seed_group[run_group]:
-                    run_group = (run_group + 1) % kmeans_group
-            conn.sendall(str(seed_group[run_group][0]
-                             ['id']).encode(encoding="utf-8"))
+            conn.sendall(str(seed_group[run_group]
+                             [0]['id']).encode(encoding="utf-8"))
             print(f"[*] run target = {seed_group[run_group][0]['id']}")
+
+    elif(require == b'skip'):
+        # This group is not interesting
+        seed_group[run_group][0]['skip'] = seed_group[run_group][0]['skip'] + 1
+        # sort first
+        seed_group[run_group] = sorted(seed_group[run_group], key=lambda k: (
+            k['fuzzcount'], k['skip']), reverse=False)
+
+        # run next group
+        run_group = (run_group + 1) % kmeans_group
+        while not seed_group[run_group]:
+            run_group = (run_group + 1) % kmeans_group
+        # maybe next group is not intertesing
+        if(seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
+            rand = random.randint(0, 9)
+            if(rand != 9):
+                while((not seed_group[run_group]) or seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
+                    run_group = (run_group + 1) % kmeans_group
+
+        conn.sendall(str(seed_group[run_group][0]
+                         ['id']).encode(encoding="utf-8"))
+        print(f"[*] next group {run_group}")
+        print(f"[*] run target = {seed_group[run_group][0]['id']}")

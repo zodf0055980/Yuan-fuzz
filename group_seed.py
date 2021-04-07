@@ -287,9 +287,11 @@ while(1):
             # run next group
             run_group = (run_group + 1) % kmeans_group
 
-            # prevent seed_group is null
-            while((not seed_group[run_group]) or seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
+            rand = random.randint(0, 9)
+            # prevent seed_group is empty and group is not interesting
+            while((not seed_group[run_group]) or ((seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0) and (rand != 9))):
                 run_group = (run_group + 1) % kmeans_group
+                rand = random.randint(0, 9)
             conn.sendall(str(seed_group[run_group][0]
                              ['id']).encode(encoding="utf-8"))
             print(f"[*] next group {run_group}")
@@ -309,14 +311,11 @@ while(1):
 
         # run next group
         run_group = (run_group + 1) % kmeans_group
-        while not seed_group[run_group]:
+
+        # prevent seed_group is empty and group is not interesting
+        while((not seed_group[run_group]) or ((seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0) and (rand != 9))):
             run_group = (run_group + 1) % kmeans_group
-        # maybe next group is not intertesing
-        if(seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
             rand = random.randint(0, 9)
-            if(rand != 9):
-                while((not seed_group[run_group]) or seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0):
-                    run_group = (run_group + 1) % kmeans_group
 
         conn.sendall(str(seed_group[run_group][0]
                          ['id']).encode(encoding="utf-8"))

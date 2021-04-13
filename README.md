@@ -69,7 +69,7 @@ It will have addition subdirectories created within the output directory and upd
 It save all seed running parameters and one-to-one correspondence with seed in queue, crashes, hangs subdirectories.
 ## Bug reported
 ### libjpeg-turbo
-1. https://github.com/libjpeg-turbo/libjpeg-turbo/issues/441
+1. https://github.com/libjpeg-turbo/libjpeg-turbo/issues/441 (CVE-2020-35538)
 ### binutils
 1. https://sourceware.org/bugzilla/show_bug.cgi?id=26774
 2. https://sourceware.org/bugzilla/show_bug.cgi?id=26805
@@ -92,6 +92,8 @@ It save all seed running parameters and one-to-one correspondence with seed in q
 1. https://github.com/libxls/libxls/issues/90
 ### aom
 1. https://bugs.chromium.org/p/aomedia/issues/detail?id=2905&q=&can=1
+2. https://bugs.chromium.org/p/aomedia/issues/detail?id=2911&q=&can=1
+3. https://bugs.chromium.org/p/aomedia/issues/detail?id=2914&q=&can=1
 ### libredwg
 1. https://github.com/LibreDWG/libredwg/issues/320
 2. https://github.com/LibreDWG/libredwg/issues/323

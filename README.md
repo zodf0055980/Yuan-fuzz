@@ -93,13 +93,17 @@ It save all seed running parameters and one-to-one correspondence with seed in q
 ### aom
 1. https://bugs.chromium.org/p/aomedia/issues/detail?id=2905&q=&can=1
 2. https://bugs.chromium.org/p/aomedia/issues/detail?id=2911&q=&can=1
-3. https://bugs.chromium.org/p/aomedia/issues/detail?id=2914&q=&can=1
+3. https://bugs.chromium.org/p/aomedia/issues/detail?id=2912&q=&can=1
+4. https://bugs.chromium.org/p/aomedia/issues/detail?id=2913&q=&can=1
+5. https://bugs.chromium.org/p/aomedia/issues/detail?id=2914&q=&can=1
 ### libredwg
 1. https://github.com/LibreDWG/libredwg/issues/320
 2. https://github.com/LibreDWG/libredwg/issues/323
 3. https://github.com/LibreDWG/libredwg/issues/324
 4. https://github.com/LibreDWG/libredwg/issues/321
 5. https://github.com/LibreDWG/libredwg/issues/325 (non release code-path)
+### libxml2
+1. https://gitlab.gnome.org/GNOME/libxml2/-/issues/231
 ---
 ### libvips (not use fuzz)
 1. https://github.com/libvips/libvips/issues/1867

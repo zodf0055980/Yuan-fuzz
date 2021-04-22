@@ -104,6 +104,7 @@ It save all seed running parameters and one-to-one correspondence with seed in q
 5. https://github.com/LibreDWG/libredwg/issues/325 (non release code-path)
 ### libxml2
 1. https://gitlab.gnome.org/GNOME/libxml2/-/issues/231
+2. https://gitlab.gnome.org/GNOME/libxml2/-/issues/235
 ---
 ### libvips (not use fuzz)
 1. https://github.com/libvips/libvips/issues/1867

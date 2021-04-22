@@ -67,7 +67,7 @@
     <ELEMENT>-maxmemory 1</ELEMENT>
   </PARAMETER>
   <PARAMETER>
-    <MUST>false</MUST>
+    <MUST>true</MUST>
     <ELEMENT>-outfile /dev/null</ELEMENT>
   </PARAMETER>
   <PARAMETER>
@@ -85,10 +85,5 @@
     <MUST>false</MUST>
     <ELEMENT>-crop 5x5+3+3</ELEMENT>
   </PARAMETER>
-  <PARAMETER>
-    <MUST>false</MUST>
-    <ELEMENT>-debug</ELEMENT>
-  </PARAMETER>
-  
 </root>
 

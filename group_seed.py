@@ -312,6 +312,7 @@ while(1):
         # run next group
         run_group = (run_group + 1) % kmeans_group
 
+        rand = random.randint(0, 9)
         # prevent seed_group is empty and group is not interesting
         while((not seed_group[run_group]) or ((seed_group[run_group][0]['fuzzcount'] > 0 or seed_group[run_group][0]['skip'] > 0) and (rand != 9))):
             run_group = (run_group + 1) % kmeans_group

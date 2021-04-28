@@ -11,6 +11,8 @@ Yuan-fuzz is a fuzzer implementing a technique to generate argv in addition fuzz
 
 And I also use k-means clustering to the group in the seed pool to improve seed selection likes [k-means-AFL](https://github.com/zodf0055980/k-means-AFL).
 
+## Notice
+We not implement with master and slave mode. Welcome to your PR.
 ## Usage
 Install [libxml2](http://xmlsoft.org/downloads.html) first.
 

@@ -9207,6 +9207,7 @@ int main(int argc, char **argv)
   if (argv_fuzz_flag == 0)
   {
     OKF("please use -s to choose argv info file");
+    exit(0);
   }
   // save in orig_cmdline e.g. ./afl-fuzz -s ../parameters.xml -i i1 -o o1 -- 123
   save_cmdline(argc, argv);

@@ -5,14 +5,23 @@ Fuzzer runs with argv information and uses k-means clustering to group seed.
   Written and maintained by zodf0055980 <zodf0055980@gmail.com>
   Based on American Fuzzy Lop by Michal Zalewski
 ```
+## Why I do this?
+There are a lot of command line arguments in the common binary, but common fuzzer only runs with one command line argument, so it cannot find some errors through the special command line.
+For instance, in CVE-2020-27843 I found, it have out of bound read with 8 argv and crafted input. Therefore, I made a fuzzer that can generate argv at runtime.
 
 ## Technology
 Yuan-fuzz is a fuzzer implementing a technique to generate argv in addition fuzzing stage named arg_gen. It can help to fuzz binary target that has a lot of argv can use. 
 
-And I also use k-means clustering to the group in the seed pool to improve seed selection likes [k-means-AFL](https://github.com/zodf0055980/k-means-AFL).
+It also can use k-means clustering to the group in the seed pool to improve seed selection, just like the [k-means-AFL](https://github.com/zodf0055980/k-means-AFL) I made.
 
-## Notice
-We not implement with master and slave mode. Welcome to your PR.
+## TODO
+- We not implement with master and slave mode.
+- Cannot use ` -i -` to resume fuzzer.
+- Allow use other format to write argv info file, likes json
+- Release English paper, I did in traditional Chinese now.
+
+I will try to fix it.
+
 ## Usage
 Install [libxml2](http://xmlsoft.org/downloads.html) first.
 
@@ -23,14 +32,14 @@ $ make
 Use `-h` `--help` to know target program options, and use it to write XML file to help fuzzing.
 I give some [XML examples](https://github.com/zodf0055980/Yuan-fuzz/tree/main/xml) here, maybe could help to write XML file.
 
-When run fuzzer, you should open our seed selection server first.
+We also implement our seed selection. You should open our seed selection server first if you want to use it.
 ```
 $ python3 group_seed.py [port]
 ```
 
 The command line usage of Yuan-fuzz is similar to AFL.
 ```
-$ Yuan-fuzz -i [testcase_dir] -o [output_dir] -s [~/XML_PATH/parameters.xml] -p [port] -- [Target program]
+$ Yuan-fuzz -i [testcase_dir] -o [output_dir] -s [~/XML_PATH/parameters.xml] [-p [port]] -- [Target program]
 ```
 I also implement two command that can help arg_gen stage.
 ```

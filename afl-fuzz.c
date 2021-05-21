@@ -9431,6 +9431,11 @@ int main(int argc, char **argv)
     }
     current_entry = number;
   }
+  else
+  {
+    queue_cur = queue_cur->next;
+    current_entry++;
+  }
 
   // original fuzz loop
 

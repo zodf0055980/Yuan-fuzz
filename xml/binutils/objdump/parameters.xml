@@ -1,0 +1,228 @@
+<root>
+  <FILE>
+    <ELEMENT>@@</ELEMENT>
+ </FILE>
+
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-a</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-f</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-p</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-P header</ELEMENT>
+    <ELEMENT>-P aout</ELEMENT>
+    <ELEMENT>-P sections</ELEMENT>
+    <ELEMENT>-P syms</ELEMENT>
+    <ELEMENT>-P relocs</ELEMENT>
+    <ELEMENT>-P lineno</ELEMENT>
+    <ELEMENT>-P loader</ELEMENT>
+    <ELEMENT>-P except</ELEMENT>
+    <ELEMENT>-P typchk</ELEMENT>
+    <ELEMENT>-P traceback</ELEMENT>
+    <ELEMENT>-P toc</ELEMENT>
+    <ELEMENT>-P ldinfo</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-h</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-x</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-d</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-D</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-S</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-s</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-G</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-WlLiaprmfFsoORtUuTgAck</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-WK</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-WN</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-L</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-t</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-T</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-r</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-R</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-b elf64-x86-64</ELEMENT>
+    <ELEMENT>-b elf32-i386</ELEMENT>
+    <ELEMENT>-b elf32-iamcu</ELEMENT>
+    <ELEMENT>-b elf32-x86-64</ELEMENT>
+    <ELEMENT>-b a.out-i386-linux</ELEMENT>
+    <ELEMENT>-b pei-i386</ELEMENT>
+    <ELEMENT>-b pei-x86-64</ELEMENT>
+    <ELEMENT>-b elf64-l1om</ELEMENT>
+    <ELEMENT>-b elf64-k1om</ELEMENT>
+    <ELEMENT>-b elf64-little</ELEMENT>
+    <ELEMENT>-b elf64-big</ELEMENT>
+    <ELEMENT>-b elf32-little</ELEMENT>
+    <ELEMENT>-b elf32-big</ELEMENT>
+    <ELEMENT>-b pe-x86-64</ELEMENT>
+    <ELEMENT>-b pe-bigobj-x86-64</ELEMENT>
+    <ELEMENT>-b pe-i386</ELEMENT>
+    <ELEMENT>-b plugin</ELEMENT>
+    <ELEMENT>-b srec</ELEMENT>
+    <ELEMENT>-b symbolsrec</ELEMENT>
+    <ELEMENT>-b verilog</ELEMENT>
+    <ELEMENT>-b tekhex</ELEMENT>
+    <ELEMENT>-b binary</ELEMENT>
+    <ELEMENT>-b ihex</ELEMENT>
+  </PARAMETER>	
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-m i386</ELEMENT>
+    <ELEMENT>-m l1om</ELEMENT>
+    <ELEMENT>-m k1om</ELEMENT>
+    <ELEMENT>-m iamcu</ELEMENT>
+    <ELEMENT>-m plugin</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-j .init</ELEMENT>
+    <ELEMENT>-j .plt</ELEMENT>
+    <ELEMENT>-j .plt.got</ELEMENT>
+    <ELEMENT>-j .text</ELEMENT>
+    <ELEMENT>-j .fini</ELEMENT>
+    <ELEMENT>-j .rodata</ELEMENT>
+    <ELEMENT>-j .init_array</ELEMENT>
+    <ELEMENT>-j .fini_array</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-M intel</ELEMENT>
+    <ELEMENT>-M x86-64</ELEMENT>
+    <ELEMENT>-M i386</ELEMENT>
+    <ELEMENT>-M i8086</ELEMENT>
+    <ELEMENT>-M att</ELEMENT>
+    <ELEMENT>-M att-mnemonic</ELEMENT>
+    <ELEMENT>-M intel-mnemonic</ELEMENT>
+    <ELEMENT>-M addr64</ELEMENT>
+    <ELEMENT>-M addr32</ELEMENT>
+    <ELEMENT>-M addr16</ELEMENT>
+    <ELEMENT>-M data32</ELEMENT>
+    <ELEMENT>-M data16</ELEMENT>
+    <ELEMENT>-M suffix</ELEMENT>
+    <ELEMENT>-M amd64</ELEMENT>
+    <ELEMENT>-M intel64</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-EB</ELEMENT>
+    <ELEMENT>-EL</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-l</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-F</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-C</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--recurse-limit</ELEMENT>
+    <ELEMENT>--no-recurse-limit</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-w</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>-z</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--start-address=0x40000</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--stop-address=0x50000</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--no-addresses</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--prefix-addresses</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--show-raw-insn</ELEMENT>
+    <ELEMENT>--no-show-raw-insn</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--special-syms</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--inlines</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--dwarf-depth=8</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--dwarf-start=8</ELEMENT>
+  </PARAMETER>
+  <PARAMETER>
+    <MUST>false</MUST>
+    <ELEMENT>--visualize-jumps</ELEMENT>
+  </PARAMETER>
+ 
+</root>

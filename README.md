@@ -23,7 +23,7 @@ It also can use k-means clustering to the group in the seed pool to improve seed
 - Allow use other format to write argv info file, likes json
 - Release English paper, I did in traditional Chinese now.
 
-I will try to fix it.
+If you have any other questions, you are welcome to create issue and I will try my best to solve them.
 
 ## Usage
 Install [libxml2](http://xmlsoft.org/downloads.html) first.

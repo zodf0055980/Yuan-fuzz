@@ -8091,7 +8091,7 @@ static void usage(u8 *argv0)
 
        "  -s xml        - add argv file information\n"
        "  -w            - let file path in front of argv\n"
-       "  -r            - argv init random\n"
+       "  -r            - argv init random (not use in parallel_fuzzing)\n"
        "  -f file       - location read by the fuzzed program (stdin)\n"
        "  -t msec       - timeout for each run (auto-scaled, 50-%u ms)\n"
        "  -m megs       - memory limit for child process (%u MB)\n"
@@ -9238,7 +9238,7 @@ int main(int argc, char **argv)
 
   int first_argv[parameter_array_size];
   memset(first_argv, 0, sizeof(first_argv));
-  if (argv_fuzz_flag == 1)
+  if (argv_fuzz_flag == 1 && sync_id == 0)
   {
     if (argv_random_first == 0)
     {

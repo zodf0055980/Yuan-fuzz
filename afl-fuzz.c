@@ -8106,7 +8106,7 @@ static void usage(u8 *argv0)
        "Other stuff:\n\n"
 
        "  -T text       - text banner to show on the screen\n"
-       "  -M / -S id    - distributed mode (see parallel_fuzzing.txt)\n"
+       "  -S id         - distributed mode (see parallel_fuzzing.txt)\n"
        "  -C            - crash exploration mode (the peruvian rabbit thing)\n"
        "  -V            - show version number and exit\n\n"
        "  -b cpu_id     - bind the fuzzing process to the specified CPU core\n\n"
@@ -8941,24 +8941,26 @@ int main(int argc, char **argv)
     case 'M':
     { /* master sync ID */
 
-      u8 *c;
+      FATAL("Yuan-fuzz Can only be used in slave mode, -M options not supported. please try to use -S.");
+      exit(0);
+      // u8 *c;
 
-      if (sync_id)
-        FATAL("Multiple -S or -M options not supported");
-      sync_id = ck_strdup(optarg);
+      // if (sync_id)
+      //   FATAL("Multiple -S or -M options not supported");
+      // sync_id = ck_strdup(optarg);
 
-      if ((c = strchr(sync_id, ':')))
-      {
+      // if ((c = strchr(sync_id, ':')))
+      // {
 
-        *c = 0;
+      //   *c = 0;
 
-        if (sscanf(c + 1, "%u/%u", &master_id, &master_max) != 2 ||
-            !master_id || !master_max || master_id > master_max ||
-            master_max > 1000000)
-          FATAL("Bogus master ID passed to -M");
-      }
+      //   if (sscanf(c + 1, "%u/%u", &master_id, &master_max) != 2 ||
+      //       !master_id || !master_max || master_id > master_max ||
+      //       master_max > 1000000)
+      //     FATAL("Bogus master ID passed to -M");
+      // }
 
-      force_deterministic = 1;
+      // force_deterministic = 1;
     }
 
     break;

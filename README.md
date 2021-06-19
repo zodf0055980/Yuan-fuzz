@@ -82,7 +82,7 @@ for example:
 $ ./afl-fuzz -i ./testcases/images/jpeg -o ./jpeg-out -M master -m none -- ~/afl-target/libjpeg-turbo/build/djpeg -outfile /dev/null @@
 
 # Yuan-fuzz
-$ ./Yuan-fuzz -i ./testcases/images/jpeg -o ~/AFLplusplus/jpeg-out -m none -s ~/Yuan-fuzz/xml/libjpeg-turbo/djpeg/parameters.xml -S slave2 -- ~/afl-target/libjpeg-turbo/build/djpeg
+$ ./Yuan-fuzz -i ./testcases/images/jpeg -o ~/AFLplusplus/jpeg-out -m none -s ~/Yuan-fuzz/xml/libjpeg-turbo/djpeg/parameters.xml -S slave1 -- ~/afl-target/libjpeg-turbo/build/djpeg
 ```
 
 

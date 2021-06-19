@@ -18,7 +18,6 @@ It also can use k-means clustering to the group in the seed pool to improve seed
 
 
 ## TODO
-- We not implement with master and slave mode.
 - Cannot use ` -i -` to resume fuzzer.
 - Allow use other format to write argv info file, likes json
 - Release English paper, I did in traditional Chinese now.
@@ -72,6 +71,21 @@ $ python3 group_seed.py 8888
 $ Yuan-fuzz -i ./testcases/images/jpeg -o fuzz_output -m none -s ./xml/libjpeg-turbo/djpeg/parameters.xml -p 8888 -- ~/TARGET_PATH/libjpeg-turbo/build/djpeg
 ```
 If your xml file have a lot of argv, maybe you have to change some define value in parse.h.
+
+## parallel fuzzing
+Yuan-fuzz can parallel fuzz with other afl-base fuzzer, likely [AFLplusplus](https://github.com/AFLplusplus/AFLplusplus).
+However, Yuan-fuzz can only be used in -S mode. And please check argv information file is same with master run.
+
+for example:
+```
+# afl++
+$ ./afl-fuzz -i ./testcases/images/jpeg -o ./jpeg-out -M master -m none -- ~/afl-target/libjpeg-turbo/build/djpeg -outfile /dev/null @@
+
+# Yuan-fuzz
+$ ./Yuan-fuzz -i ./testcases/images/jpeg -o ~/AFLplusplus/jpeg-out -m none -s ~/Yuan-fuzz/xml/libjpeg-turbo/djpeg/parameters.xml -S slave2 -- ~/afl-target/libjpeg-turbo/build/djpeg
+```
+
+
 
 ## Interpreting output
 It will have addition subdirectories created within the output directory and updated in real time.

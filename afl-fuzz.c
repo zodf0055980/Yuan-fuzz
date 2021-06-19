@@ -9380,7 +9380,7 @@ int main(int argc, char **argv)
     prev_queued = queued_paths;
 
     if (sync_id && queue_cycle == 1 && getenv("AFL_IMPORT_FIRST"))
-      sync_fuzzers(use_argv);
+      sync_fuzzers(init_argv);
 
     // argv-fuzz
     if (argv_fuzz_flag)
@@ -9396,7 +9396,7 @@ int main(int argc, char **argv)
     if (!stop_soon && sync_id && !skipped_fuzz)
     {
       if (!(sync_interval_cnt++ % SYNC_INTERVAL))
-        sync_fuzzers(use_argv);
+        sync_fuzzers(init_argv);
     }
 
     if (!stop_soon && exit_1)
@@ -9492,7 +9492,7 @@ int main(int argc, char **argv)
     {
 
       if (!(sync_interval_cnt++ % SYNC_INTERVAL))
-        sync_fuzzers(use_argv);
+        sync_fuzzers(init_argv);
     }
 
     if (!stop_soon && exit_1)

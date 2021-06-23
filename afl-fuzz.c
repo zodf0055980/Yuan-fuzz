@@ -7753,7 +7753,7 @@ static void sync_fuzzers(char **argv)
           return;
 
         syncing_party = sd_ent->d_name;
-        queued_imported += save_if_interesting(argv, mem, st.st_size, fault, queue_cur->argv);
+        queued_imported += save_if_interesting(argv, mem, st.st_size, fault, queue->argv);
         syncing_party = 0;
 
         munmap(mem, st.st_size);
@@ -9238,7 +9238,7 @@ int main(int argc, char **argv)
 
   int first_argv[parameter_array_size];
   memset(first_argv, 0, sizeof(first_argv));
-  if (argv_fuzz_flag == 1 && sync_id == 0)
+  if (argv_fuzz_flag == 1)
   {
     if (argv_random_first == 0)
     {

@@ -9398,7 +9398,10 @@ int main(int argc, char **argv)
     if (!stop_soon && sync_id && !skipped_fuzz)
     {
       if (!(sync_interval_cnt++ % SYNC_INTERVAL))
+      {
+        reset_forkserv_argvs(init_argv);
         sync_fuzzers(init_argv);
+      }
     }
 
     if (!stop_soon && exit_1)

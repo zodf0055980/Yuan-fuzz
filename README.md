@@ -19,8 +19,9 @@ It also can use k-means clustering to the group in the seed pool to improve seed
 
 ## TODO
 - Cannot use ` -i -` to resume fuzzer.
+- Cannot use without `-s xmlfile`, maybe you can try [k-means-AFL](https://github.com/zodf0055980/k-means-AFL) I made.
 - Allow use other format to write argv info file, likes json
-- Release English paper, I did in traditional Chinese now.
+- Release English paper, I did in [traditional Chinese](https://etd.lib.nctu.edu.tw/cgi-bin/gs32/tugsweb.cgi/ccd=zC6eIU/record?r1=1&h1=0#XXXX) now.
 
 If you have any other questions, you are welcome to create issue and I will try my best to solve them.
 

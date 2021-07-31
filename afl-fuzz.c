@@ -9328,7 +9328,9 @@ int main(int argc, char **argv)
     sock = connect_socket();
     OKF("success connect socket");
 
-    send(sock, out_dir, strlen(out_dir), 0);
+    char *real_out_dir = realpath(out_dir, NULL);
+    send(sock, real_out_dir, strlen(real_out_dir), 0);
+    free(real_out_dir);
   }
 
   if (stop_soon)

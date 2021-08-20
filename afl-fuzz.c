@@ -9262,7 +9262,7 @@ int main(int argc, char **argv)
         {
           int ur = UR(parameter[i].count + 1);
           first_argv[i] = ur;
-          OKF("parameter coint = %d", parameter[i].count);
+          OKF("parameter count = %d", parameter[i].count);
           OKF("ur = %d", ur);
         }
       }

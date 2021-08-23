@@ -3653,7 +3653,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
       ck_write(qd, " ", 1, qn);
       now++;
     }
-    close(fd);
+    close(qd);
     ck_free(qn);
   }
   return keeping;

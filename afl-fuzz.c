@@ -5142,7 +5142,7 @@ static void reset_forkserv_argvs(char **new_argvs)
   }
 }
 
-/* run rarget */
+/* run target */
 
 EXP_ST u8 argv_common_fuzz_stuff(char **argv, u8 *out_buf, u32 len, int argv_array[])
 {

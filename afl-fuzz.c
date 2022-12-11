@@ -3473,6 +3473,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
       }
       close(qd);
     }
+    ck_free(qn);
   }
 
   switch (fault)
@@ -7626,6 +7627,18 @@ argv_abandon_entry:
   new_argv = (char **)ck_alloc(sizeof(char *) * 200);
   memset(new_argv, 0, sizeof(char *) * 200);
   generate_arg(new_argv, argv, queue_cur->argv);
+
+  if (argv != NULL)
+  {
+    char **now = argv;
+    while (*now)
+    {
+      ck_free(*now);
+      now++;
+    }
+    if (argv)
+      ck_free(argv);
+  }
 
   return new_argv;
 }

@@ -3473,6 +3473,7 @@ static u8 save_if_interesting(char **argv, void *mem, u32 len, u8 fault, int arg
       }
       close(qd);
     }
+    ck_free(qn);
   }
 
   switch (fault)
@@ -7627,6 +7628,18 @@ argv_abandon_entry:
   memset(new_argv, 0, sizeof(char *) * 200);
   generate_arg(new_argv, argv, queue_cur->argv);
 
+  if (argv != NULL)
+  {
+    char **now = argv;
+    while (*now)
+    {
+      ck_free(*now);
+      now++;
+    }
+    if (argv)
+      ck_free(argv);
+  }
+
   return new_argv;
 }
 
@@ -9296,10 +9309,15 @@ int main(int argc, char **argv)
   else
     use_argv = argv + optind;
 
+  char **tmp_use_argv = (char **)ck_alloc(sizeof(char *) * 200);
+  memset(tmp_use_argv, 0, sizeof(char) * 200);
+  generate_arg(tmp_use_argv, use_argv, first_argv);
+
   char **init_argv = (char **)ck_alloc(sizeof(char *) * 200);
   memset(init_argv, 0, sizeof(char) * 200);
   generate_arg(init_argv, use_argv, first_argv);
-  use_argv = init_argv;
+
+  use_argv = tmp_use_argv;
 
   OKF("init argv");
   char **now = use_argv;
